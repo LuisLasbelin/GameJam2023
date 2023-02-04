@@ -22,8 +22,7 @@ func _on_Volver_pressed():
 
 func _on_Continuar_pressed():
 	pass # Replace with function body.
-	
 
 
-func _on_MenuOpciones_ready():
-	Global.prevscene = get_tree().current_scene.filename
+#func _on_MenuOpciones_ready():
+#	Global.prevscene = get_tree().current_scene.filename

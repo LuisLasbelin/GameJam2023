@@ -8,7 +8,7 @@ onready var nombre = $Nombre
 
 
 var percText = 0
-export var waiting = 0.05
+export var waiting = 0.025
 var lineas = []
 var currLine = 0
 var dialogo = {}
@@ -84,27 +84,23 @@ func nextLine():
 		# Suma 1 a la parte del dialogo
 		dialogoParte += 1
 		print("Parte: ", dialogoParte)
-		# Si ya ha llegado al final del dialogo, cambia al siguiente cliente
-		if(dialogoParte >= dialogo.size()):
-			print("NUEVO CLIENTE")
-			sceneManager.loadClient(sceneManager.dia, sceneManager.cliente + 1)
-		# Si todavia no llega al final del dialogo
-		else:
-			if(dialogo[str(dialogoParte)].tipo == "dialogo"):
-				# Toma las lineas de la nueva parte
-				loadLines(dialogoParte)
-				# Reinicia las lineas
-				currLine = 0
-			if(dialogo[str(dialogoParte)].tipo == "flores"):
-				sceneManager.changeToFlowers(dialogo[str(dialogoParte)].requisitos);
-				currLine = 0
-				return
-			if(dialogo[str(dialogoParte)].tipo == "fin"):
-				# Pasa al siguiente cliente
-				sceneManager.cliente += 1
-				lineas = []
-				sceneManager.endDialog()
-				return
+		if(dialogo[str(dialogoParte)].tipo == "dialogo"):
+			# Toma las lineas de la nueva parte
+			loadLines(dialogoParte)
+			# Reinicia las lineas
+			currLine = 0
+		if(dialogo[str(dialogoParte)].tipo == "flores"):
+			sceneManager.changeToFlowers(dialogo[str(dialogoParte)].requisitos);
+			currLine = 0
+			return
+		if(dialogo[str(dialogoParte)].tipo == "fin"):
+			# Pasa al siguiente cliente
+			lineas = []
+			dialogoParte = 0
+			dialogeText = ""
+			nombre = ""
+			sceneManager.endDialog()
+			return
 	else:
 		dialogeText.text = ""
 		writeLine()

@@ -5,6 +5,7 @@ onready var dialogo = $"../CanvasLayer/Dialogo"
 onready var flores = $"../CanvasLayer/Flores"
 onready var animator = $"../CanvasLayer/PanelsAnimator"
 onready var clientClass = $"../Cliente"
+onready var nuevoClienteBtn = $"../CanvasLayer/NuevoCliente"
 
 
 var dia: int = 0
@@ -13,7 +14,8 @@ var cliente: int = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	flores.visible = false
+	dialogo.visible = false
 
 
 func _on_NuevoCliente_button_down():
@@ -25,13 +27,16 @@ func newClient():
 	clientClass.changeSprite(Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].sprite)
 	flores.visible = false
 	dialogo.visible = true
+	nuevoClienteBtn.visible = false
+	clientClass.clientEnters()
 
 
-func changeToDialog():
+func changeToDialog(puntos):
+	animator.play("QuitarPanel")
+	yield(get_tree().create_timer(1), "timeout")
+	dialogo.resolverRamo(puntos)
 	flores.visible = false
 	dialogo.visible = true
-	dialogo.resolverRamo()
-	animator.play("QuitarPanel")
 
 
 func changeToFlowers(requisitos):
@@ -45,5 +50,5 @@ func endDialog():
 	dialogo.visible = false
 	clientClass.clientExit()
 	yield(get_tree().create_timer(2), "timeout")
-	newClient()
+	nuevoClienteBtn.visible = true
 
