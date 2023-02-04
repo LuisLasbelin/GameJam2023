@@ -17,9 +17,7 @@ var cliente: int = -1
 func _ready():
 	flores.visible = false
 	dialogo.visible = false
-
-
-func _on_NuevoCliente_button_down():
+	yield(get_tree().create_timer(2), "timeout")
 	newClient()
 
 
@@ -28,7 +26,6 @@ func newClient():
 	clientClass.changeSprite(Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].sprite)
 	flores.visible = false
 	dialogo.visible = true
-	nuevoClienteBtn.visible = false
 	clientClass.clientEnters()
 	
 	
@@ -55,7 +52,8 @@ func endDialog():
 	clientClass.clientExit()
 	yield(get_tree().create_timer(2), "timeout")
 	if(cliente < Escena1.scenedata.dias[str(dia)].clientes.size() - 1):
-		nuevoClienteBtn.visible = true
+		yield(get_tree().create_timer(2), "timeout")
+		newClient()
 	else:
 		# llega al final del dia
 		nextDay()
