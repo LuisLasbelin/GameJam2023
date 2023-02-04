@@ -1,7 +1,7 @@
 extends Control
 
 
-onready var sceneManager = $"../SceneManager"
+onready var sceneManager = $"../../SceneManager"
 
 var flowerTaken = null
 var flowers = []

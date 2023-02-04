@@ -1,8 +1,8 @@
 extends Node
 
 
-onready var dialogo = $"../Dialogo"
-onready var flores = $"../Flores"
+onready var dialogo = $"../CanvasLayer/Dialogo"
+onready var flores = $"../CanvasLayer/Flores"
 
 
 var dia: int = 0

@@ -1,8 +1,8 @@
 extends Control
 
 
-onready var dialogeText = $RichTextLabel
-onready var sceneManager = $"../SceneManager"
+onready var dialogeText = $Label
+onready var sceneManager = $"../../SceneManager"
 
 
 var percText = 0
@@ -27,16 +27,16 @@ func _process(delta):
 
 
 func writeLine():
-	print("Write: ", dialogeText.text)
+	print("Write: ", lineas[currLine])
 	escribiendo = true
-	for letter in dialogeText.text:
+	for letter in lineas[currLine]:
 		# pausa cada almohadilla
 		if(letter == "#"):
 			yield(get_tree().create_timer(0.5), "timeout")
 			# elimina el simbolo del texto
-			dialogeText.text[dialogeText.visible_characters] = ""
-		dialogeText.visible_characters += 1
-		yield(get_tree().create_timer(waiting), "timeout")
+		else:
+			dialogeText.text += letter
+			yield(get_tree().create_timer(waiting), "timeout")
 	# Termina de escribir
 	currLine += 1
 	escribiendo = false
@@ -70,12 +70,10 @@ func resolverRamo(puntos = 999):
 			print("Resultado negativo, siguiente parte: ", dialogoParte)
 		currLine = 0
 		loadLines(dialogoParte)
-		nextLine()
 
 
 func nextLine():
 	print("Linea: ", currLine)
-	dialogeText.visible_characters = 0
 	# Cuando llega a la ultima linea de esta parte
 	if(currLine >= lineas.size()):
 		# Suma 1 a la parte del dialogo
@@ -102,5 +100,5 @@ func nextLine():
 				sceneManager.endDialog()
 				return
 	else:
-		dialogeText.text = lineas[currLine]
+		dialogeText.text = ""
 		writeLine()

@@ -11,12 +11,17 @@ config_version=4
 [application]
 
 config/name="Game Jam 2023"
-run/main_scene="res://Scenes/Floristeria.tscn"
+run/main_scene="res://Scenes/Tienda2d.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Escena1="*res://Scripts/escena1.gd"
+
+[display]
+
+window/size/width=1440
+window/size/height=720
 
 [gui]
 
