@@ -61,8 +61,12 @@
                             "tipo": "fin"
                         }
                     }
-                },
-                "1" : {
+                }
+            }
+        },
+        "1": {
+            "clientes": {
+                "0" : {
                     "nombre" : "Jose",
                     "sprite" : "res://Sprites/WRATH_TEST_01.png",
                     "dialogo" : {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/SceneManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Dialogo.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/MenuPausa.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Cliente.gd" type="Script" id=5]
 [ext_resource path="res://musica.wav" type="AudioStream" id=6]
+[ext_resource path="res://Themes/Dialogo.tres" type="Theme" id=7]
 
 [sub_resource type="Animation" id=3]
 resource_name = "ColocarPanel"
@@ -37,6 +38,37 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 1600, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Entrar"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 0.267944 ),
+"update": 0,
+"values": [ Vector2( 0, -748 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Salir"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1.46409, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -748 ) ]
 }
 
 [sub_resource type="Animation" id=1]
@@ -109,6 +141,7 @@ script = ExtResource( 1 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource( 4 )]
+visible = false
 
 [node name="Flores" parent="CanvasLayer" instance=ExtResource( 3 )]
 margin_left = 1457.0
@@ -130,6 +163,47 @@ margin_top = -28.0
 margin_bottom = 28.0
 
 [node name="MenuPausa" parent="CanvasLayer" instance=ExtResource( 4 )]
+visible = false
+
+[node name="CambioDia" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -965.0
+margin_bottom = -965.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/CambioDia"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/CambioDia"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.5
+margin_top = -18.5
+margin_right = 24.5
+margin_bottom = 18.5
+theme = ExtResource( 7 )
+text = "Día"
+align = 1
+
+[node name="Dia" type="Label" parent="CanvasLayer/CambioDia/Label"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.5
+margin_top = 20.0
+margin_right = 24.5
+margin_bottom = 57.0
+theme = ExtResource( 7 )
+text = "2"
+align = 1
+
+[node name="DiaAnimator" type="AnimationPlayer" parent="CanvasLayer/CambioDia"]
+anims/Entrar = SubResource( 6 )
+anims/Salir = SubResource( 7 )
 
 [node name="Cliente" type="Node2D" parent="."]
 script = ExtResource( 5 )

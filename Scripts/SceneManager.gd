@@ -6,6 +6,7 @@ onready var flores = $"../CanvasLayer/Flores"
 onready var animator = $"../CanvasLayer/PanelsAnimator"
 onready var clientClass = $"../Cliente"
 onready var nuevoClienteBtn = $"../CanvasLayer/NuevoCliente"
+onready var cambioDiaAnimator = $"../CanvasLayer/CambioDia/DiaAnimator"
 
 
 var dia: int = 0
@@ -50,5 +51,17 @@ func endDialog():
 	dialogo.visible = false
 	clientClass.clientExit()
 	yield(get_tree().create_timer(2), "timeout")
-	nuevoClienteBtn.visible = true
+	if(cliente < Escena1.scenedata.dias[str(dia)].clientes.size() - 1):
+		nuevoClienteBtn.visible = true
+	else:
+		# llega al final del dia
+		nextDay()
 
+
+func nextDay():
+	dia += 1
+	cambioDiaAnimator.play("Entrar")
+	yield(get_tree().create_timer(2), "timeout")
+	cambioDiaAnimator.play("Salir")
+	cliente = -1
+	newClient()
