@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/MenuPrincipal.gd" type="Script" id=1]
+[ext_resource path="res://Media/MusicaMenuInicio.wav" type="AudioStream" id=2]
 
 [node name="MenuPrincipal" type="Control"]
 anchor_right = 1.0
@@ -63,6 +64,10 @@ margin_bottom = 124.0
 rect_min_size = Vector2( 119, 0 )
 size_flags_horizontal = 0
 text = "Salir"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
 
 [connection signal="ready" from="." to="." method="_on_MenuPrincipal_ready"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Opciones" to="." method="_on_Opciones_pressed"]
