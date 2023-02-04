@@ -26,6 +26,7 @@
                     "nombre" : "Dargan",
                     "sprite" : "res://Sprites/DENIAL_AtRest.png",
                     "altSprite": "res://Sprites/DENIAL_Talking.png",
+                    "tone": "res://Media/hombre_hablando.ogg",
                     "dialogo" : {
                         "0" : {
                             "tipo": "dialogo",
@@ -314,6 +315,7 @@
                     "nombre" : "Cole",
                     "sprite" : "res://Sprites/WRATH_TEST_01.png",
                     "altSprite": "res://Sprites/WRATH_TEST_01.png",
+                    "tone": "res://Media/chaval_hablando.ogg",
                     "dialogo": {
                         "0" : {
                             "tipo": "dialogo",

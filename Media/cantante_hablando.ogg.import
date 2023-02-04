@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cantante_hablando.ogg-d09d5b1a390d4d46236a465c4ca9be60.oggstr"
+
+[deps]
+
+source_file="res://Media/cantante_hablando.ogg"
+dest_files=[ "res://.import/cantante_hablando.ogg-d09d5b1a390d4d46236a465c4ca9be60.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

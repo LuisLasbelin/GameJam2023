@@ -8,8 +8,10 @@ onready var clientClass = $"../Cliente"
 onready var nuevoClienteBtn = $"../CanvasLayer/NuevoCliente"
 onready var cambioDiaAnimator = $"../CanvasLayer/CambioDia/DiaAnimator"
 onready var musica = $"../AudioStreamPlayer2D"
+onready var diaText = $"../CanvasLayer/CambioDia/Label/Dia"
 
-var dia: int = 0
+
+var dia: int = -1
 var cliente: int = -1
 
 
@@ -17,8 +19,7 @@ var cliente: int = -1
 func _ready():
 	flores.visible = false
 	dialogo.visible = false
-	yield(get_tree().create_timer(2), "timeout")
-	newClient()
+	nextDay()
 
 
 func newClient():
@@ -61,6 +62,7 @@ func endDialog():
 
 func nextDay():
 	dia += 1
+	diaText.text = str(dia+1)
 	cambioDiaAnimator.play("Entrar")
 	yield(get_tree().create_timer(2), "timeout")
 	cambioDiaAnimator.play("Salir")

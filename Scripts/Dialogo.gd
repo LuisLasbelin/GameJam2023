@@ -108,7 +108,7 @@ func nextLine():
 		if(dialogo[str(dialogoParte)].hablante == "cliente"):
 			cliente.clientHabla()
 			nombre.text = Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].nombre
-			speakingPlayer.stream = load("res://Media/hombre_hablando.ogg")
+			speakingPlayer.stream = load(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].tone)
 			# Comprueba que tenga sprites alternativos
 			if(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite):
 				cliente.changeSprite(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite)
