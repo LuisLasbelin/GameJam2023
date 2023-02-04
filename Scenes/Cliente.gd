@@ -22,9 +22,5 @@ func clientHabla():
 	animator.play("Hablar")
 
 
-func _ready():
-	clientEnters()
-
-
 func changeSprite(route):
-	sprite.texture = route
+	sprite.texture = load(route)
