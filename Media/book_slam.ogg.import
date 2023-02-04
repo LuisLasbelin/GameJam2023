@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/book_slam.ogg-3ea59e3b6a0d4c2316a4ae90a9f74f23.oggstr"
+
+[deps]
+
+source_file="res://Media/book_slam.ogg"
+dest_files=[ "res://.import/book_slam.ogg-3ea59e3b6a0d4c2316a4ae90a9f74f23.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

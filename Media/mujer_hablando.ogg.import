@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mujer_hablando.ogg-91567cdb9e22e688cbd03638dac59539.oggstr"
+
+[deps]
+
+source_file="res://Media/mujer_hablando.ogg"
+dest_files=[ "res://.import/mujer_hablando.ogg-91567cdb9e22e688cbd03638dac59539.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

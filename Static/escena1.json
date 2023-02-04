@@ -9,7 +9,7 @@
                     "dialogo": {
                         "0" : {
                             "tipo": "dialogo",
-                            "hablante": "cliente",
+                            "hablante": "tu",
                             "lineas": [
                                 "Al fin. Mi propia floristería. ¡No puedo creer que esté haciendo esto!",
                                 "Quizás no es en el lugar que me habría esperado.# Un pueblo del que no sé nada… La combinación de buses es terrible…",
@@ -157,7 +157,7 @@
                         "16": {
                             "tipo": "sonido",
                             "hablante": "",
-                            "source": "",
+                            "source": "res://Media/book_slam.ogg",
                             "lineas": [
                                 "*pum*"
                             ]
@@ -296,7 +296,7 @@
                     "dialogo": {
                         "0" : {
                             "tipo": "dialogo",
-                            "hablante": "cliente",
+                            "hablante": "tu",
                             "lineas": [
                                 "Son las 11 de la mañana. La tienda lleva tres horas abiertas y nadie ha pasado.",
                                 "Mi padre solía decir que con los pequeños negocios nunca se sabe.",
@@ -740,7 +740,7 @@
                     "dialogo":{
                         "0" : {
                             "tipo": "sonido",
-                            "source": "",
+                            "source": "res://Media/door_slam.ogg",
                             "hablante": "",
                             "lineas": [
                                 "*portazo*"
@@ -765,7 +765,7 @@
                     "dialogo":{
                         "0" : {
                             "tipo": "sonido",
-                            "source": "",
+                            "source": "res://Media/door_slam.ogg",
                             "hablante": "",
                             "lineas": [
                                 "*portazo*"
