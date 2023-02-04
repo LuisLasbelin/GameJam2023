@@ -3,6 +3,8 @@ extends Control
 onready var controler = $"."
 onready var imagen = $TextureRect
 onready var parentManager = $".."
+onready var labelHover = $"../LabelHover"
+
 var mouseOn = false
 var pickable = true
 var inBouquet = false
@@ -10,11 +12,13 @@ var inBouquet = false
 
 func _on_TextureRect_mouse_entered():
 	mouseOn = true
+	get_node(labelHover).show()
 
 
 func _on_TextureRect_mouse_exited():
 	mouseOn = false
-
+	get_node(labelHover).hide()
+	
 
 func _process(delta):
 	if(mouseOn && Input.is_action_pressed("ui_select") && pickable):

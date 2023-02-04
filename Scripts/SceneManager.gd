@@ -7,7 +7,7 @@ onready var animator = $"../CanvasLayer/PanelsAnimator"
 onready var clientClass = $"../Cliente"
 onready var nuevoClienteBtn = $"../CanvasLayer/NuevoCliente"
 onready var cambioDiaAnimator = $"../CanvasLayer/CambioDia/DiaAnimator"
-
+onready var musica = $"../AudioStreamPlayer2D"
 
 var dia: int = 0
 var cliente: int = -1
@@ -30,6 +30,9 @@ func newClient():
 	dialogo.visible = true
 	nuevoClienteBtn.visible = false
 	clientClass.clientEnters()
+	
+	
+	
 
 
 func changeToDialog(puntos):
