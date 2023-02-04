@@ -5,6 +5,7 @@ onready var dialogeText = $Label
 onready var sceneManager = $"../../SceneManager"
 onready var cliente = $"../../Cliente"
 onready var nombre = $Nombre
+onready var audioPlayer = $AudioEffects
 
 
 var percText = 0
@@ -81,7 +82,8 @@ func nextLine():
 			sceneManager.changeToFlowers(dialogo[str(dialogoParte)].requisitos);
 			return
 		if(dialogo[str(dialogoParte)].tipo == "sonido"):
-			# TODO: ejecuta un sonido
+			audioPlayer.stream = load(dialogo[str(dialogoParte)].source)
+			audioPlayer.play()
 			# Reinicia las lineas
 			currLine = 0
 			# Toma las lineas de la nueva parte

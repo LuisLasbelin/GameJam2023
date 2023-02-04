@@ -18,23 +18,11 @@ func set_is_paused(value):
 	is_paused = value
 	get_tree().paused = is_paused
 	visible = is_paused
-		
-		
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("hola Menu Pausas")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 
 
 func _on_Salir_pressed():
@@ -45,6 +33,7 @@ func _on_MenuPausa_ready():
 	Global.prevscene = get_tree().current_scene.filename
 	print("prevscene")
 	print(Global.prevscene)
+
 
 func _on_Volumen_pressed():
 	#print("pulsado volumen")
@@ -63,3 +52,4 @@ func _on_HSliderVolumen_value_changed(value):
 
 func _on_Salir_button_down():
 	get_tree().quit()
+

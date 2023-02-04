@@ -157,7 +157,7 @@
                         "16": {
                             "tipo": "sonido",
                             "hablante": "",
-                            "source": "",
+                            "source": "res://Media/book_slam.ogg",
                             "lineas": [
                                 "*pum*"
                             ]
@@ -740,7 +740,7 @@
                     "dialogo":{
                         "0" : {
                             "tipo": "sonido",
-                            "source": "",
+                            "source": "res://Media/door_slam.ogg",
                             "hablante": "",
                             "lineas": [
                                 "*portazo*"
@@ -765,7 +765,7 @@
                     "dialogo":{
                         "0" : {
                             "tipo": "sonido",
-                            "source": "",
+                            "source": "res://Media/door_slam.ogg",
                             "hablante": "",
                             "lineas": [
                                 "*portazo*"
