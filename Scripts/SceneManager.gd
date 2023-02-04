@@ -28,3 +28,4 @@ func changeToFlowers(requisitos):
 
 func endDialog():
 	dialogo.visible = false
+
