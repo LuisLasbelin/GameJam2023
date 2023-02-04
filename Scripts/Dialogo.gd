@@ -30,6 +30,11 @@ func writeLine():
 	print("Write: ", dialogeText.text)
 	escribiendo = true
 	for letter in dialogeText.text:
+		# pausa cada almohadilla
+		if(letter == "#"):
+			yield(get_tree().create_timer(0.5), "timeout")
+			# elimina el simbolo del texto
+			dialogeText.text[dialogeText.visible_characters] = ""
 		dialogeText.visible_characters += 1
 		yield(get_tree().create_timer(waiting), "timeout")
 	# Termina de escribir
