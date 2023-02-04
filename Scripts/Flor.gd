@@ -2,22 +2,25 @@ extends Control
 
 onready var controler = $"."
 onready var imagen = $TextureRect
-onready var parentManager = $".."
-onready var labelHover = $"../LabelHover"
+onready var parentManager = $"../.."
+
 
 var mouseOn = false
 var pickable = true
 var inBouquet = false
 
 
+
+
+
 func _on_TextureRect_mouse_entered():
 	mouseOn = true
-	get_node(labelHover).show()
+	$LabelHover.show()
 
 
 func _on_TextureRect_mouse_exited():
 	mouseOn = false
-	get_node(labelHover).hide()
+	$LabelHover.hide()
 	
 
 func _process(delta):
