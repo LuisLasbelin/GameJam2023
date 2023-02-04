@@ -6,6 +6,7 @@ onready var sceneManager = $"../../SceneManager"
 onready var cliente = $"../../Cliente"
 onready var nombre = $Nombre
 onready var audioPlayer = $AudioEffects
+onready var speakingPlayer = $SpeakingEffect
 
 
 var percText = 0
@@ -107,11 +108,13 @@ func nextLine():
 		if(dialogo[str(dialogoParte)].hablante == "cliente"):
 			cliente.clientHabla()
 			nombre.text = Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].nombre
+			speakingPlayer.stream = load("res://Media/hombre_hablando.ogg")
 			# Comprueba que tenga sprites alternativos
 			if(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite):
 				cliente.changeSprite(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite)
 		if(dialogo[str(dialogoParte)].hablante == "tu"):
 			nombre.text = "Flora"
+			speakingPlayer.stream = load("res://Media/mujer_hablando.ogg")
 			# Comprueba que tenga sprites alternativos
 			if(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite):
 				cliente.changeSprite(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].sprite)
@@ -129,6 +132,7 @@ func writeLine():
 			# elimina el simbolo del texto
 		else:
 			dialogeText.text += letter
+			speakingPlayer.play()
 			yield(get_tree().create_timer(waiting), "timeout")
 	# Termina de escribir
 	currLine += 1

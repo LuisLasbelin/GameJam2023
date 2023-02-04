@@ -48,6 +48,8 @@ margin_bottom = 9.20001
 theme = ExtResource( 2 )
 autowrap = true
 
-[node name="AudioEffects" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioEffects" type="AudioStreamPlayer" parent="."]
+
+[node name="SpeakingEffect" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

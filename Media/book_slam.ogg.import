@@ -11,5 +11,5 @@ dest_files=[ "res://.import/book_slam.ogg-3ea59e3b6a0d4c2316a4ae90a9f74f23.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
