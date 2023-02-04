@@ -3,15 +3,15 @@
         "0": {
             "clientes" : {
                 "0" : {
-                    "nombre" : "Mamá",
-                    "sprite" : "",
+                    "nombre" : "Padre",
+                    "sprite" : "res://Sprites/DENIAL_TEST_02.png",
                     "dialogo" : {
                         "0" : {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
                                 "¡Buenos días!",
-                                "Hace un día #estupendo",
+                                "Hace un día #estupendo.",
                                 "¿Puedes prepararme un bouquet colorido?"
                             ]
                         },
@@ -55,6 +55,67 @@
                             "lineas": [
                                 "No está mal, pero podrías haber prestado más atención a lo que te decía.",
                                 "Nos veremos."
+                            ]
+                        },
+                        "6" : {
+                            "tipo": "fin"
+                        }
+                    }
+                }
+            }
+        },
+        "1": {
+            "clientes": {
+                "0" : {
+                    "nombre" : "Jose",
+                    "sprite" : "res://Sprites/WRATH_TEST_01.png",
+                    "dialogo" : {
+                        "0" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Me ha dejado la novia y algo de eso."
+                            ]
+                        },
+                        "1": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Vale..."
+                            ]
+                        },
+                        "2" : {
+                            "tipo": "flores",
+                            "requisitos": {
+                                "aceptados": [
+                                    "Geranios",
+                                    "Rosas",
+                                    "Azucenas"
+                                ],
+                                "denegados": [
+                                    "Margaritas"
+                                ]
+                            },
+                            "resultados": {
+                                "positivo": 3,
+                                "negativo": 5
+                            }
+                        },
+                        "3" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "me gusta."
+                            ]
+                        },
+                        "4" : {
+                            "tipo": "fin"
+                        },
+                        "5" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Menuda porquería."
                             ]
                         },
                         "6" : {

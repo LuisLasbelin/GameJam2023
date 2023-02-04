@@ -9,6 +9,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
 [node name="Geranios" type="Control" parent="."]
 anchor_right = 0.059
 anchor_bottom = 0.102
@@ -32,10 +36,10 @@ anchor_left = 0.132
 anchor_top = 0.122
 anchor_right = 0.19
 anchor_bottom = 0.223
-margin_left = -0.167999
-margin_top = -0.200005
-margin_right = 0.439987
-margin_bottom = 0.199997
+margin_left = 8.92001
+margin_top = 16.16
+margin_right = 9.52798
+margin_bottom = 16.56
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
