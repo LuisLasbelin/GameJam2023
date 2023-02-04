@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=3 format=2]
 
 [ext_resource path="res://Fonts/JandaSolid.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/JandaSolidPeque.tres" type="DynamicFont" id=2]
 
 [resource]
-default_font = ExtResource( 1 )
+default_font = ExtResource( 2 )
 Label/fonts/font = ExtResource( 1 )
