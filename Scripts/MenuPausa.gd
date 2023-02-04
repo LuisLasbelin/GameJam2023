@@ -56,10 +56,10 @@ func _on_Continuar_button_up():
 	pass # Replace with function body.
 
 
-	
-
-
-
 func _on_HSliderVolumen_value_changed(value):
 	if value != 0:
 		AudioServer.set_bus_volume_db(master_bus,value)
+
+
+func _on_Salir_button_down():
+	get_tree().quit()

@@ -25,8 +25,11 @@ func newClient():
 	cliente += 1
 	clientClass.changeSprite(Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].sprite)
 	flores.visible = false
-	dialogo.visible = true
 	clientClass.clientEnters()
+	yield(get_tree().create_timer(3.5), "timeout")
+	dialogo.visible = true
+	dialogo.loadDialog()
+	dialogo.loadLines(0)
 
 
 func changeToDialog(puntos):

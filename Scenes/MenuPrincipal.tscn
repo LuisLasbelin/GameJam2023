@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/MenuPrincipal.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/GameJamMenu.png" type="Texture" id=2]
 [ext_resource path="res://Media/MusicaMenuInicio.wav" type="AudioStream" id=3]
+[ext_resource path="res://Themes/Dialogo.tres" type="Theme" id=4]
 
 [node name="MenuPrincipal" type="Control"]
 anchor_right = 1.0
@@ -70,6 +71,18 @@ margin_bottom = -44.5
 rect_min_size = Vector2( 119, 0 )
 size_flags_horizontal = 0
 flat = true
+
+[node name="Version" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -111.0
+margin_top = -37.0
+theme = ExtResource( 4 )
+text = "v0.0.1.0"
+align = 1
+valign = 1
 
 [connection signal="ready" from="." to="." method="_on_MenuPrincipal_ready"]
 [connection signal="pressed" from="TextureRect/Opciones" to="." method="_on_Opciones_pressed"]

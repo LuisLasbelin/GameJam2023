@@ -5,6 +5,7 @@
                 "0" : {
                     "nombre" : "Flora",
                     "sprite" : "",
+                    "altSprite": "",
                     "dialogo": {
                         "0" : {
                             "tipo": "dialogo",
@@ -23,7 +24,8 @@
                 },
                 "1" : {
                     "nombre" : "Dargan",
-                    "sprite" : "res://Sprites/DENIAL_TEST_02.png",
+                    "sprite" : "res://Sprites/DENIAL_AtRest.png",
+                    "altSprite": "res://Sprites/DENIAL_Talking.png",
                     "dialogo" : {
                         "0" : {
                             "tipo": "dialogo",
@@ -265,6 +267,7 @@
                 "2" : {
                     "nombre" : "Flora",
                     "sprite" : "",
+                    "altSprite": "",
                     "dialogo": {
                         "0" : {
                             "tipo": "dialogo",
@@ -289,6 +292,7 @@
                 "0" : {
                     "nombre" : "Flora",
                     "sprite" : "",
+                    "altSprite": "",
                     "dialogo": {
                         "0" : {
                             "tipo": "dialogo",
@@ -309,6 +313,7 @@
                 "1" : {
                     "nombre" : "Cole",
                     "sprite" : "res://Sprites/WRATH_TEST_01.png",
+                    "altSprite": "res://Sprites/WRATH_TEST_01.png",
                     "dialogo": {
                         "0" : {
                             "tipo": "dialogo",
@@ -731,6 +736,7 @@
                 "2" : {
                     "nombre": "Flora",
                     "sprite": "",
+                    "altSprite": "",
                     "dialogo":{
                         "0" : {
                             "tipo": "sonido",
@@ -755,6 +761,7 @@
                 "3" : {
                     "nombre": "Flora",
                     "sprite": "",
+                    "altSprite": "",
                     "dialogo":{
                         "0" : {
                             "tipo": "sonido",

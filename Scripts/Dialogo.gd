@@ -12,7 +12,7 @@ export var waiting = 0.025
 var lineas = []
 var currLine = 0
 var dialogo = {}
-var dialogoParte = -1
+var dialogoParte = 0
 var escribiendo = false
 var textoPausado = false
 
@@ -57,6 +57,7 @@ func resolverRamo(puntos = 999):
 
 
 func nextLine():
+	print("Parte: ", dialogoParte)
 	if(dialogo.size() < 1):
 		return
 	if(currLine >= lineas.size()):
@@ -87,7 +88,7 @@ func nextLine():
 			loadLines(dialogoParte)
 			return
 		if(dialogo[str(dialogoParte)].tipo == "fin"):
-			if(dialogo[str(dialogoParte)].jump):
+			if(dialogo[str(dialogoParte)].has('jump')):
 				# salta a el cliente -1 para sumarlo despues
 				sceneManager.cliente = dialogo[str(dialogoParte)].jump - 1
 			# Pasa al siguiente cliente
@@ -104,8 +105,14 @@ func nextLine():
 		if(dialogo[str(dialogoParte)].hablante == "cliente"):
 			cliente.clientHabla()
 			nombre.text = Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].nombre
+			# Comprueba que tenga sprites alternativos
+			if(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite):
+				cliente.changeSprite(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite)
 		if(dialogo[str(dialogoParte)].hablante == "tu"):
 			nombre.text = "Flora"
+			# Comprueba que tenga sprites alternativos
+			if(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite):
+				cliente.changeSprite(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].sprite)
 		if(dialogo[str(dialogoParte)].hablante == ""):
 			nombre.text = ""
 
