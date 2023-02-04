@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/MenuPrincipal.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/boton_jugar.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/GameJamMenu.png" type="Texture" id=2]
 [ext_resource path="res://Media/MusicaMenuInicio.wav" type="AudioStream" id=3]
 
 [node name="MenuPrincipal" type="Control"]
@@ -14,65 +14,64 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.709804, 0.658824, 0.658824, 0.556863 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 614.0
-margin_top = 253.0
-margin_right = 826.0
-margin_bottom = 467.0
-
-[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
-margin_right = 212.0
-
-[node name="TituloMenu" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 212.0
-margin_bottom = 18.0
-text = "Menú"
-align = 1
-
-[node name="Menu" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
-margin_top = 22.0
-margin_right = 212.0
-margin_bottom = 22.0
-text = "Menú"
-
-[node name="Opciones" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 26.0
-margin_right = 119.0
-margin_bottom = 46.0
-rect_min_size = Vector2( 119, 0 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Opciones"
-
-[node name="Comenzar Paritida" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 50.0
-margin_right = 212.0
-margin_bottom = 190.0
-rect_min_size = Vector2( 118, 0 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-icon = ExtResource( 2 )
-flat = true
-icon_align = 1
-
-[node name="Salir" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 194.0
-margin_right = 119.0
-margin_bottom = 214.0
-rect_min_size = Vector2( 119, 0 )
-size_flags_horizontal = 0
-text = "Salir"
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
 
+[node name="Control" type="Control" parent="."]
+margin_left = 720.0
+margin_top = 360.0
+margin_right = 720.0
+margin_bottom = 360.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 140.0
+margin_top = -290.0
+margin_right = 340.0
+margin_bottom = 10.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+
+[node name="Opciones" type="Button" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = 132.0
+margin_right = -21.0
+margin_bottom = -124.0
+rect_min_size = Vector2( 119, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+flat = true
+
+[node name="Comenzar Paritida" type="Button" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 37.0
+margin_top = 55.0
+margin_right = -22.0
+margin_bottom = -206.0
+rect_min_size = Vector2( 118, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+flat = true
+icon_align = 1
+
+[node name="Salir" type="Button" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 214.5
+margin_right = -57.0
+margin_bottom = -44.5
+rect_min_size = Vector2( 119, 0 )
+size_flags_horizontal = 0
+flat = true
+
 [connection signal="ready" from="." to="." method="_on_MenuPrincipal_ready"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Opciones" to="." method="_on_Opciones_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Comenzar Paritida" to="." method="_on_Comenzar_Paritida_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Salir" to="." method="_on_Salir_pressed"]
+[connection signal="pressed" from="TextureRect/Opciones" to="." method="_on_Opciones_pressed"]
+[connection signal="pressed" from="TextureRect/Comenzar Paritida" to="." method="_on_Comenzar_Paritida_pressed"]
+[connection signal="pressed" from="TextureRect/Salir" to="." method="_on_Salir_pressed"]

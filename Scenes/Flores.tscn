@@ -16,8 +16,11 @@ anchor_bottom = 1.0
 [node name="GridContainer" type="GridContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/vseparation = 300
-custom_constants/hseparation = 300
+margin_left = 219.0
+margin_right = -177.0
+margin_bottom = -120.0
+custom_constants/vseparation = 206
+custom_constants/hseparation = 292
 columns = 3
 
 [node name="Geranios4" type="Control" parent="GridContainer"]
@@ -48,8 +51,8 @@ margin_bottom = 143.0
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
 [node name="Geranios5" type="Control" parent="GridContainer"]
-margin_left = 300.0
-margin_right = 300.0
+margin_left = 292.0
+margin_right = 292.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -77,8 +80,8 @@ margin_bottom = 143.0
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
 [node name="Geranios7" type="Control" parent="GridContainer"]
-margin_left = 600.0
-margin_right = 600.0
+margin_left = 584.0
+margin_right = 584.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -106,8 +109,8 @@ margin_bottom = 143.0
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
 [node name="Geranios8" type="Control" parent="GridContainer"]
-margin_top = 300.0
-margin_bottom = 300.0
+margin_top = 206.0
+margin_bottom = 206.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -135,10 +138,10 @@ margin_bottom = 143.0
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
 [node name="Geranios9" type="Control" parent="GridContainer"]
-margin_left = 300.0
-margin_top = 300.0
-margin_right = 300.0
-margin_bottom = 300.0
+margin_left = 292.0
+margin_top = 206.0
+margin_right = 292.0
+margin_bottom = 206.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -166,10 +169,10 @@ margin_bottom = 143.0
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
 [node name="Geranios10" type="Control" parent="GridContainer"]
-margin_left = 600.0
-margin_top = 300.0
-margin_right = 600.0
-margin_bottom = 300.0
+margin_left = 584.0
+margin_top = 206.0
+margin_right = 584.0
+margin_bottom = 206.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -197,8 +200,8 @@ margin_bottom = 143.0
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
 [node name="Geranios11" type="Control" parent="GridContainer"]
-margin_top = 600.0
-margin_bottom = 600.0
+margin_top = 412.0
+margin_bottom = 412.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -226,10 +229,10 @@ margin_bottom = 143.0
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
 [node name="Geranios2" type="Control" parent="GridContainer"]
-margin_left = 300.0
-margin_top = 600.0
-margin_right = 300.0
-margin_bottom = 600.0
+margin_left = 292.0
+margin_top = 412.0
+margin_right = 292.0
+margin_bottom = 412.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -257,10 +260,10 @@ margin_bottom = 143.0
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
 [node name="Geranios3" type="Control" parent="GridContainer"]
-margin_left = 600.0
-margin_top = 600.0
-margin_right = 600.0
-margin_bottom = 600.0
+margin_left = 584.0
+margin_top = 412.0
+margin_right = 584.0
+margin_bottom = 412.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 

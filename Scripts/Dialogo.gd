@@ -6,6 +6,7 @@ onready var sceneManager = $"../../SceneManager"
 onready var cliente = $"../../Cliente"
 onready var nombre = $Nombre
 
+
 var percText = 0
 export var waiting = 0.025
 var lineas = []

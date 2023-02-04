@@ -10,19 +10,21 @@ config_version=4
 
 [application]
 
-config/name="Game Jam 2023"
+config/name="Blooming Roots"
 run/main_scene="res://Scenes/MenuPrincipal.tscn"
-config/icon="res://icon.png"
+config/icon="res://Sprites/icon.ico"
+config/windows_native_icon="res://Sprites/icon.ico"
 
 [autoload]
 
-Escena1="*res://Scripts/escena1.gd"
+Escena1="*res://Scripts/Escena1.gd"
 Global="*res://Scripts/Global.gd"
 
 [display]
 
 window/size/width=1440
 window/size/height=720
+window/size/fullscreen=true
 
 [gui]
 

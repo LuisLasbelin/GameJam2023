@@ -27,9 +27,6 @@ func newClient():
 	flores.visible = false
 	dialogo.visible = true
 	clientClass.clientEnters()
-	
-	
-	
 
 
 func changeToDialog(puntos):
