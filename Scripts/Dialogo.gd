@@ -6,7 +6,7 @@ onready var sceneManager = $"../SceneManager"
 
 
 var percText = 0
-export var waiting = 0.02
+export var waiting = 0.05
 var lineas = []
 var currLine = 0
 var dialogo = {}
@@ -27,10 +27,14 @@ func _process(delta):
 
 
 func writeLine():
+	print("Write: ", dialogeText.text)
+	escribiendo = true
 	for letter in dialogeText.text:
-		print("Writing")
 		dialogeText.visible_characters += 1
 		yield(get_tree().create_timer(waiting), "timeout")
+	# Termina de escribir
+	currLine += 1
+	escribiendo = false
 
 
 func _on_Button_pressed():
@@ -66,7 +70,7 @@ func resolverRamo(puntos = 999):
 
 func nextLine():
 	print("Linea: ", currLine)
-	writeLine()
+	dialogeText.visible_characters = 0
 	# Cuando llega a la ultima linea de esta parte
 	if(currLine >= lineas.size()):
 		# Suma 1 a la parte del dialogo
@@ -92,4 +96,6 @@ func nextLine():
 				lineas = []
 				sceneManager.endDialog()
 				return
-
+	else:
+		dialogeText.text = lineas[currLine]
+		writeLine()
