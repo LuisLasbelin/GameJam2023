@@ -16,6 +16,10 @@ func _ready():
 	pass
 
 
+func _on_NuevoCliente_button_down():
+	newClient()
+
+
 func newClient():
 	cliente += 1
 	clientClass.changeSprite(Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].sprite)
@@ -42,3 +46,4 @@ func endDialog():
 	clientClass.clientExit()
 	yield(get_tree().create_timer(2), "timeout")
 	newClient()
+
