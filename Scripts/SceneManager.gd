@@ -8,12 +8,12 @@ onready var clientClass = $"../Cliente"
 
 
 var dia: int = 0
-var cliente: int = 0
+var cliente: int = -1
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	newClient()
+	pass
 
 
 func newClient():
