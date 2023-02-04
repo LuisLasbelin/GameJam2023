@@ -1,11 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/MenuPrincipal.gd" type="Script" id=1]
-<<<<<<< HEAD
 [ext_resource path="res://Sprites/boton_jugar.png" type="Texture" id=2]
-=======
 [ext_resource path="res://Media/MusicaMenuInicio.wav" type="AudioStream" id=2]
->>>>>>> f3d32e97869847a467a40888887061a44934bd3b
 
 [node name="MenuPrincipal" type="Control"]
 anchor_right = 1.0
