@@ -86,6 +86,9 @@ func nextLine():
 			loadLines(dialogoParte)
 			return
 		if(dialogo[str(dialogoParte)].tipo == "fin"):
+			if(dialogo[str(dialogoParte)].jump):
+				# salta a el cliente -1 para sumarlo despues
+				sceneManager.cliente = dialogo[str(dialogoParte)].jump - 1
 			# Pasa al siguiente cliente
 			lineas = []
 			dialogoParte = -1
