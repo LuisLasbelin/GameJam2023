@@ -1,6 +1,6 @@
 extends Control
 
-var master_bus = AudioServer.get_bus_index("Master")
+
 
 
 # Declare member variables here. Examples:

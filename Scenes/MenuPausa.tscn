@@ -4,7 +4,6 @@
 
 [node name="MenuPausa" type="Control"]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -17,46 +16,69 @@ color = Color( 0.34902, 0.309804, 0.309804, 0.772549 )
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 73.0
-margin_bottom = 144.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 720.0
-margin_top = 375.0
-margin_right = 793.0
-margin_bottom = 489.0
-custom_constants/separation = 10
+margin_left = 685.0
+margin_top = 314.0
+margin_right = 754.0
+margin_bottom = 406.0
 
 [node name="Pausado" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 73.0
+margin_right = 69.0
 margin_bottom = 14.0
 text = "Pausa"
 align = 1
 
 [node name="ControlSeparador" type="Control" parent="CenterContainer/VBoxContainer"]
-margin_top = 24.0
-margin_right = 73.0
-margin_bottom = 24.0
-
-[node name="Continuar" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 34.0
-margin_right = 73.0
-margin_bottom = 54.0
-text = "Continuar"
+margin_top = 18.0
+margin_right = 69.0
+margin_bottom = 18.0
 
 [node name="Guardar" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 64.0
-margin_right = 73.0
-margin_bottom = 84.0
+margin_top = 22.0
+margin_right = 69.0
+margin_bottom = 42.0
 text = "Guardar"
 
 [node name="Volumen" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 94.0
-margin_right = 73.0
-margin_bottom = 114.0
+margin_top = 46.0
+margin_right = 69.0
+margin_bottom = 66.0
 text = "Volumen"
 
-[connection signal="button_down" from="CenterContainer/VBoxContainer/Continuar" to="." method="_on_Continuar_button_down"]
-[connection signal="button_up" from="CenterContainer/VBoxContainer/Continuar" to="." method="_on_Continuar_button_up"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Continuar" to="." method="_on_Continuar_pressed"]
+[node name="ControlSeparador2" type="Label" parent="CenterContainer/VBoxContainer"]
+pause_mode = 2
+margin_top = 70.0
+margin_right = 69.0
+margin_bottom = 84.0
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 69.0
+margin_bottom = 88.0
+
+[node name="ControlesVolumen" type="Control" parent="CenterContainer/VBoxContainer"]
+margin_top = 92.0
+margin_right = 69.0
+margin_bottom = 92.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/ControlesVolumen"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="EtiquetaVolumen" type="Label" parent="CenterContainer/VBoxContainer/ControlesVolumen/VBoxContainer"]
+margin_right = 107.0
+margin_bottom = 14.0
+text = "Control Volumen"
+
+[node name="HSliderVolumen" type="HSlider" parent="CenterContainer/VBoxContainer/ControlesVolumen/VBoxContainer"]
+margin_top = 18.0
+margin_right = 107.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 10, 10 )
+min_value = -30.0
+max_value = 0.0
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Volumen" to="." method="_on_Volumen_pressed"]
+[connection signal="changed" from="CenterContainer/VBoxContainer/ControlesVolumen/VBoxContainer/HSliderVolumen" to="." method="_on_HSliderVolumen_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/ControlesVolumen/VBoxContainer/HSliderVolumen" to="." method="_on_HSliderVolumen_value_changed"]

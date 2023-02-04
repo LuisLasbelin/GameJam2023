@@ -2,8 +2,10 @@ extends Control
 
 
 var is_paused = false setget set_is_paused
+var master_bus = AudioServer.get_bus_index("Master")
 
 
+onready var ControlVolumen = $CenterContainer/VBoxContainer/ControlesVolumen
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("pause"):
@@ -45,7 +47,8 @@ func _on_MenuPausa_ready():
 
 func _on_Volumen_pressed():
 	#print("pulsado volumen")
-	get_tree().change_scene("res://Scenes/OpcionesVolumen.tscn")
+	
+	ControlVolumen.visible = !ControlVolumen.visible 
 
 
 func _on_Continuar_button_up():
@@ -53,3 +56,9 @@ func _on_Continuar_button_up():
 
 
 	
+
+
+
+func _on_HSliderVolumen_value_changed(value):
+	if value != 0:
+		AudioServer.set_bus_volume_db(master_bus,value)
