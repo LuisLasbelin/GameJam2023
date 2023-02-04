@@ -2,19 +2,26 @@ extends Control
 
 onready var controler = $"."
 onready var imagen = $TextureRect
-onready var parentManager = $".."
+onready var parentManager = $"../.."
+
+
 var mouseOn = false
 var pickable = true
 var inBouquet = false
 
 
+
+
+
 func _on_TextureRect_mouse_entered():
 	mouseOn = true
+	$LabelHover.show()
 
 
 func _on_TextureRect_mouse_exited():
 	mouseOn = false
-
+	$LabelHover.hide()
+	
 
 func _process(delta):
 	if(mouseOn && Input.is_action_pressed("ui_select") && pickable):
