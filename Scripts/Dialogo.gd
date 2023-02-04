@@ -57,10 +57,11 @@ func resolverRamo(puntos = 999):
 
 
 func nextLine():
+	if(dialogo.size() < 1):
+		return
 	if(currLine >= lineas.size()):
 		# Suma 1 a la parte del dialogo
 		dialogoParte += 1
-		print("Parte: ", dialogoParte)
 		if(dialogo[str(dialogoParte)].tipo == "dialogo"):
 			# Reinicia las lineas
 			currLine = 0
@@ -70,7 +71,25 @@ func nextLine():
 			sceneManager.changeToFlowers(dialogo[str(dialogoParte)].requisitos);
 			currLine = 0
 			return
+		if(dialogo[str(dialogoParte)].tipo == "jump"):
+			# Salta a uno antes del seleccionado
+			dialogoParte = dialogo[str(dialogoParte)].parte-1
+			return
+		if(dialogo[str(dialogoParte)].tipo == "retake"):
+			dialogoParte = dialogo[str(dialogoParte)].parte
+			sceneManager.changeToFlowers(dialogo[str(dialogoParte)].requisitos);
+			return
+		if(dialogo[str(dialogoParte)].tipo == "sonido"):
+			# TODO: ejecuta un sonido
+			# Reinicia las lineas
+			currLine = 0
+			# Toma las lineas de la nueva parte
+			loadLines(dialogoParte)
+			return
 		if(dialogo[str(dialogoParte)].tipo == "fin"):
+			if(dialogo[str(dialogoParte)].jump):
+				# salta a el cliente -1 para sumarlo despues
+				sceneManager.cliente = dialogo[str(dialogoParte)].jump - 1
 			# Pasa al siguiente cliente
 			lineas = []
 			dialogoParte = -1
@@ -87,6 +106,8 @@ func nextLine():
 			nombre.text = Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].nombre
 		if(dialogo[str(dialogoParte)].hablante == "tu"):
 			nombre.text = "Flora"
+		if(dialogo[str(dialogoParte)].hablante == ""):
+			nombre.text = ""
 
 
 func writeLine():

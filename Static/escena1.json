@@ -3,26 +3,187 @@
         "0": {
             "clientes" : {
                 "0" : {
-                    "nombre" : "Padre",
-                    "sprite" : "res://Sprites/DENIAL_TEST_02.png",
-                    "dialogo" : {
+                    "nombre" : "Flora",
+                    "sprite" : "",
+                    "dialogo": {
                         "0" : {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "¡Buenos días!",
-                                "Hace un día #estupendo.",
-                                "¿Puedes prepararme un bouquet colorido?"
+                                "Al fin. Mi propia floristería. ¡No puedo creer que esté haciendo esto!",
+                                "Quizás no es en el lugar que me habría esperado.# Un pueblo del que no sé nada… La combinación de buses es terrible…",
+                                "La ciudad más cercana está a una hora en coche.",
+                                "Pero creo que es un sitio bonito en el que florecer."
+                            ]
+                        },
+                        "1" : {
+                            "tipo": "fin"
+                        }
+                    }
+                },
+                "1" : {
+                    "nombre" : "Dargan",
+                    "sprite" : "res://Sprites/DENIAL_TEST_02.png",
+                    "dialogo" : {
+                        "0" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "(Oh. Es él.)"
                             ]
                         },
                         "1": {
                             "tipo": "dialogo",
-                            "hablante": "tu",
+                            "hablante": "cliente",
                             "lineas": [
-                                "Claro, ahora te lo preparo."
+                                "Conque es esto por lo que te has decantado al final."
                             ]
                         },
-                        "2" : {
+                        "2": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Sí.# Esto.",
+                                "¿Algo que objetar?"
+                            ]
+                        },
+                        "3": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Sí.## Podrías volver a tus raíces.# Hacer algo de provecho, conseguir dinero."
+                            ]
+                        },
+                        "4": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "No voy a trabajar para tu empresa. Ya lo he decidido.",
+                                "Esto es lo que quiero. Lo que siempre he querido.",
+                                "No era feliz en una empresa."
+                            ]
+                        },
+                        "5": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "A la larga lo serías."
+                            ]
+                        },
+                        "6": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "No, yo…"
+                            ]
+                        },
+                        "7": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Yo sé lo que es mejor para ti."
+                            ]
+                        },
+                        "8": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "No sabes lo que es mejor para nadie, Dargan."
+                            ]
+                        },
+                        "9": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Hmf.",
+                                "Está bien.",
+                                "Pero cuando vuelvas a mi amparo quiero que recuerdes que quedarte aquí fue tu decisión.",
+                                "Cuando estés sin un duro en la cuenta, cuando estés replanteándote si realmente podrías haber crecido aquí en un primer lugar, quiero que recuerdes que te advertí.",
+                                "Largarte de la ciudad y de una gran empresa para venir a un sitio apartado de la mano de Dios… ¿Quién te crees que eres, chiquilla?",
+                                "Esto no es un juego de granjitas ni animalitos.",
+                                "Esto va a ser duro y te vas a arrepentir."
+                            ]
+                        },
+                        "10": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "No cambiarás de parecer, ¿no? Vas a negar la realidad una y otra vez, ¿verdad?",
+                                "No.# Pienso.# Volver."
+                            ]
+                        },
+                        "11": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Pues bien. Seré tu primer cliente.",
+                                "Quiero un ramo para mi hija. Un ramo con flores oscuras, silvestres. Nada demasiado recargado, no quiero un ramo excesivamente grande."
+                            ]
+                        },
+                        "12": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Hm. De acuerdo.",
+                                "(Tranquila, Flora. Esto será pan comido. No dejes que te amedrente.)",
+                                "(Recuerda: lo importante son los colores, la cantidad de flores y…)",
+                                "¿Y cuál es la ocasión?"
+                            ]
+                        },
+                        "13": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Quiero desearle buena suerte."
+                            ]
+                        },
+                        "14": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Uhm..."
+                            ]
+                        },
+                        "15": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¿Qué? ¿Demasiado complicado?",
+                                "¿O es porque te has dejado esto en mi oficina?"
+                            ]
+                        },
+                        "16": {
+                            "tipo": "sonido",
+                            "hablante": "",
+                            "source": "",
+                            "lineas": [
+                                "*pum*"
+                            ]
+                        },
+                        "17": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "(¡El libro de la abuela!)"
+                            ]
+                        },
+                        "18": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "El lenguaje de las flores. Espero que no me confecciones un ramo que signifique… No sé. Futuro laboral desastroso."
+                            ]
+                        },
+                        "19": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Hm. Vale. Voy allá.",
+                                "(Bien. El lenguaje de las flores. Con esto debería ser capaz de confeccionar un ramo no sólo estético sino con un sentido…)",
+                                "(Teniendo en cuenta lo que me ha pedido, debería ser capaz de crear algo)"
+                            ]
+                        },
+                        "20" : {
                             "tipo": "flores",
                             "requisitos": {
                                 "aceptados": [
@@ -35,56 +196,374 @@
                                 ]
                             },
                             "resultados": {
-                                "positivo": 3,
-                                "negativo": 5
+                                "positivo": 25,
+                                "negativo": 21
                             }
                         },
-                        "3" : {
+                        "21" : {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "Es precioso, querida."
+                                "¿Qué es esta basura?",
+                                "¿Por esto has dejado mi empresa?",
+                                "Haz algo decente, anda.",
+                                "Hazlo de nuevo."
                             ]
                         },
-                        "4" : {
+                        "22" : {
+                            "tipo": "retake",
+                            "parte": 20
+                        },
+                        "25" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Oh. Un ramo decente. Me gusta. ¿Crees que le gustará?"
+                            ]
+                        },
+                        "26" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "..."
+                            ]
+                        },
+                        "27" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Toma, para cuando necesites verme de nuevo..."
+                            ]
+                        },
+                        "28" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "(Una tarjeta de empresa... ¿En serio?)"
+                            ]
+                        },
+                        "29" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Bueno. Te lo dejo aquí. Ya te pasaré la dirección para que se lo envíes de mi parte.",
+                                "Hasta la vista, Flora."
+                            ]
+                        },
+                        "30" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Adiós."
+                            ]
+                        },
+                        "31" : {
                             "tipo": "fin"
-                        },
-                        "5" : {
+                        }
+                    }
+                },
+                "2" : {
+                    "nombre" : "Flora",
+                    "sprite" : "",
+                    "dialogo": {
+                        "0" : {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "No está mal, pero podrías haber prestado más atención a lo que te decía.",
-                                "Nos veremos."
+                                "AAAAGH. No puede ser verdad.",
+                                "No me puedo creer que mi primer cliente sea el cretino de...",
+                                "Respira, Flora.# Cálmate.",
+                                "Mañana será otro día.",
+                                "Al menos ya he tenido un cliente... Por algo se empieza."
                             ]
                         },
-                        "6" : {
+                        "1" : {
                             "tipo": "fin"
                         }
                     }
                 }
             }
         },
-        "1": {
-            "clientes": {
+        "1" : {
+            "clientes" : {
                 "0" : {
-                    "nombre" : "Jose",
-                    "sprite" : "res://Sprites/WRATH_TEST_01.png",
-                    "dialogo" : {
+                    "nombre" : "Flora",
+                    "sprite" : "",
+                    "dialogo": {
                         "0" : {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "Me ha dejado la novia y algo de eso."
+                                "Son las 11 de la mañana. La tienda lleva tres horas abiertas y nadie ha pasado.",
+                                "Mi padre solía decir que con los pequeños negocios nunca se sabe.",
+                                "Que a veces están colocados en sitios que, simplemente, no tienen buena suerte...",
+                                "El ramo de ayer... Todavía no me ha enviado ninguna dirección.",
+                                "Pshé."
                             ]
                         },
-                        "1": {
+                        "1" : {
+                            "tipo": "fin"
+                        }
+                    }
+                },
+                "1" : {
+                    "nombre" : "Cole",
+                    "sprite" : "res://Sprites/WRATH_TEST_01.png",
+                    "dialogo": {
+                        "0" : {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
-                                "Vale..."
+                                "¡Oh! ¡Hola, bienv--!"
+                            ]
+                        },
+                        "1" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¡¡Tú eres la nueva florista!!"
                             ]
                         },
                         "2" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "¡Oh! Ehm... Sí."
+                            ]
+                        },
+                        "3" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¡Al fin alguna tienda útil en este pueblucho! ¡Necesito flores, a ser posible para ya!"
+                            ]
+                        },
+                        "4" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Ay. Pero... Flores ¿cómo?# ¿Son para algún arreglo floral, una boda, un regalo...?"
+                            ]
+                        },
+                        "5" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "No, a ver. ¿Las flores no se gastan como... para decir te quiero?"
+                            ]
+                        },
+                        "6" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Sí, pueden..."
+                            ]
+                        },
+                        "7" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¡No, pues entonces eso!"
+                            ]
+                        },
+                        "8" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "¿Quieres decirle a alguien que le quieres?"
+                            ]
+                        },
+                        "9" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¡Sí, no sé! ¡Un ramo, pava! ¿Que estás sorda? ¡RA-MO!",
+                                "¡Flores! ¡Algo que le vaya a gustar!"
+                            ]
+                        },
+                        "10" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Vale, tranquilízate, necesito..."
+                            ]
+                        },
+                        "11" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "No, no, no me tranquilizo! Quiero flores y como le regale flores de plástico yo creo que me mata. Y si las compro online no llegan hasta la semana que viene.",
+                                "¡¡Y NECESITO ESTO PARA AYER!!"
+                            ]
+                        },
+                        "12" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "¡Vale, vale!# Pero necesito que me digas un poco... No sé, ¿para quién son? ¿Tu madre, tu pareja?"
+                            ]
+                        },
+                        "13" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Mi novia."
+                            ]
+                        },
+                        "14" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "De acuerdo... ¿Y sabrías decirme de qué color le gustan las flores?"
+                            ]
+                        },
+                        "15" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¿Las flores?",
+                                "Sé que su color favorito es el morado.",
+                                "Le regalé una amatista por su cumpleaños y le gustó mucho, la tiene siempre en su mesita de noche...",
+                                "Y, bueno, se llama Violet, así que..."
+                            ]
+                        },
+                        "16" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Vale, ¿le gustan las violetas?"
+                            ]
+                        },
+                        "17" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "No... Me había parado a pensarlo. Espero que sí."
+                            ]
+                        },
+                        "18" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "No pasa nada. Me pongo a ello."
+                            ]
+                        },
+                        "19" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Es que... ¿Sabes que pasa?",
+                                "Tengo... #Tengo la mejor novia del mundo.",
+                                "Que sí, que suena a hipérbole, pero es que es... No sé, como la mejor, ¿sabes?",
+                                "Y la quiero mucho.",
+                                "Y le he hecho daño.",
+                                "Y no quiero, no sé. Que se vaya."
+                            ]
+                        },
+                        "20" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Eso es muy noble.# Quieres un ramo para pedirle disculpas, entonces."
+                            ]
+                        },
+                        "21" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Oh... ¡¿Eso se puede hacer?!"
+                            ]
+                        },
+                        "22" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Claro."
+                            ]
+                        },
+                        "23" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¡¿QUÉ DICES?!",
+                                "SÍSÍSÍSÍSÍSÍ. ESO MISMO, PERO JUSTÍSIMO.",
+                                "BUA, TÍA ES COMO... LO QUE ESTABA PENSANDO."
+                            ]
+                        },
+                        "24" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "¿Pedirle perdón con un ramo?"
+                            ]
+                        },
+                        "25" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "SÍ, PERO NO SABÍA QUE HABÍAN RAMOS PARA PEDIR DISCULPAS."
+                            ]
+                        },
+                        "26" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Los hay, los hay. Por poder puedes decir que hasta odias a alguien."
+                            ]
+                        },
+                        "27" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¿Qué? O sea, no quiero decirle eso a mi novia, pero... A otros tíos...",
+                                "Bueno, igual sería raro. #Que le regalase un ramo al pavo que me cae mal."
+                            ]
+                        },
+                        "28" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Sí. Bueno, depende un poco. Si quieres ser sutil y...",
+                                "No habías venido aquí para eso, perdona.",
+                                "Un ramo para pedir disculpas y que tenga flores moradas, ¿es eso lo que quieres?"
+                            ]
+                        },
+                        "29" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Sí... No sé. Pero quiero que sea un pedazo de ramo. Gigante, ¿sabes?"
+                            ]
+                        },
+                        "30" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Gigante... De acuerdo."
+                            ]
+                        },
+                        "31" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Sí... Como mi amor por ella, ¿sabes?"
+                            ]
+                        },
+                        "32" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "(Ay, qué mono.)"
+                            ]
+                        },
+                        "33" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "EH, EH, DEJA DE SONREÍR QUE TE ESTOY VIENDO."
+                            ]
+                        },
+                        "34" : {
                             "tipo": "flores",
                             "requisitos": {
                                 "aceptados": [
@@ -97,29 +576,204 @@
                                 ]
                             },
                             "resultados": {
-                                "positivo": 3,
-                                "negativo": 5
+                                "positivo": 35,
+                                "negativo": 48
                             }
                         },
-                        "3" : {
+                        "35" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Y voilà. ¿Te gusta?"
+                            ]
+                        },
+                        "36" : {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "me gusta."
+                                "Hala. Es... Enorme. Qué chulada, ¿no? ¿Tú crees que le gustará?"
                             ]
                         },
-                        "4" : {
-                            "tipo": "fin"
+                        "37" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "¿Y tú?"
+                            ]
                         },
-                        "5" : {
+                        "38" : {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "Menuda porquería."
+                                "¿Yo? Bua. No sé. O sea, supongo que sí. A mí me gusta."
                             ]
                         },
-                        "6" : {
+                        "39" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Digo que si crees que le gustará."
+                            ]
+                        },
+                        "40" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¡Ah! Sí. Sísísísí. Le gustará.",
+                                "Y el significado es..."
+                            ]
+                        },
+                        "41" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "El significado es *Lo siento* y *Te quiero*."
+                            ]
+                        },
+                        "42" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Jo... Sí que dicen cosas las flores, ¿no?",
+                                "Pues... Pues nada, muchas gracias. Es súper bonito.",
+                                "...",
+                                "Ahí va, que me voy sin pagarte. Espera...",
+                                "Con esto basta, ¿no?"
+                            ]
+                        },
+                        "43" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Sí. Espero que te vaya bien con ella.",
+                                "Por cierto, he visto que no le quitas ojo al ramo. ¿qué ocurre?"
+                            ]
+                        },
+                        "44" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Estas flores de aquí... Las moradas. De pequeño crecían unas cuantas cerca de mi casa.",
+                                "Y siempre iba a recogerlas... Y se las daba a mis padres o a mis amigos.",
+                                "Me gustaba que les gustasen...",
+                                "Supongo que con Ellie será igual."
+                            ]
+                        },
+                        "45" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Seguro que sí."
+                            ]
+                        },
+                        "46" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "OYE NO PIENSES QUE ESTO ES TIERNO.",
+                                "NO SOY TIERNO.",
+                                "ADIÓS."
+                            ]
+                        },
+                        "47" : {
                             "tipo": "fin"
+                        },
+                        "48" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¿Qué es esto?"
+                            ]
+                        },
+                        "49" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "El ramo que me has pedido."
+                            ]
+                        },
+                        "50" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Hm. Ehm. No.",
+                                "No es el ramo que te he pedido.",
+                                "O sea, creo que no estás entendiendo que te he pedido flores moradas.",
+                                "O que fuera grande.",
+                                "O sea, ¿esto es grande? No sé. No sé qué decirte, vaya.",
+                                "Y, uf. Es que.",
+                                "Es que si le doy esto yo creo que me mata.",
+                                "Qué poco gusto, la madre."
+                            ]
+                        },
+                        "51" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Oye, que tampoco es para ponerse así..."
+                            ]
+                        },
+                        "52" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "CLARO QUE ME VOY A PONER ASÍ, ES QUE NO TENGO TIEMPO. ES QUE NO SÉ QUE HACER, NO SÉ QUE DARLE",
+                                "Y VIENES TÚ Y ME HACES...",
+                                "¡BAH, TÍO, PASO!"
+                            ]
+                        },
+                        "53" : {
+                            "tipo": "fin",
+                            "jump": 3
+                        }
+                    }
+                },
+                "2" : {
+                    "nombre": "Flora",
+                    "sprite": "",
+                    "dialogo":{
+                        "0" : {
+                            "tipo": "sonido",
+                            "source": "",
+                            "hablante": "",
+                            "lineas": [
+                                "*portazo*"
+                            ]
+                        },
+                        "1" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Espero que le vaya bien."
+                            ]
+                        },
+                        "2":{
+                            "type": "fin"
+                        }
+                    }
+                },
+                "3" : {
+                    "nombre": "Flora",
+                    "sprite": "",
+                    "dialogo":{
+                        "0" : {
+                            "tipo": "sonido",
+                            "source": "",
+                            "hablante": "",
+                            "lineas": [
+                                "*portazo*"
+                            ]
+                        },
+                        "1" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Bueno. Un primer... O segundo cliente complicado.",
+                                "No pasa nada, Flora. No pasa nada..."
+                            ]
+                        },
+                        "2":{
+                            "type": "fin"
                         }
                     }
                 }
