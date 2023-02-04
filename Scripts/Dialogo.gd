@@ -3,6 +3,8 @@ extends Control
 
 onready var dialogeText = $Label
 onready var sceneManager = $"../../SceneManager"
+onready var cliente = $"../../Cliente"
+onready var nombre = $Nombre
 
 
 var percText = 0
@@ -18,7 +20,6 @@ var textoPausado = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currLine = 0
-	loadDialog(sceneManager.dia, sceneManager.cliente)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,14 +48,16 @@ func _on_Button_pressed():
 		nextLine()
 
 
-func loadDialog(dia, cliente):
-	dialogo = Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].dialogo
+func loadDialog():
+	dialogo = Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].dialogo
 	loadLines(dialogoParte)
 
 
 # Carga las lineas de la parte enviada y el valor dialogo del script
 func loadLines(_part):
 	lineas = dialogo[str(_part)].lineas
+	# Nombre del hablante
+	nombre.text = Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].nombre
 	nextLine()
 
 
@@ -74,6 +77,8 @@ func resolverRamo(puntos = 999):
 
 func nextLine():
 	print("Linea: ", currLine)
+	# Animator
+	cliente.clientHabla()
 	# Cuando llega a la ultima linea de esta parte
 	if(currLine >= lineas.size()):
 		# Suma 1 a la parte del dialogo
@@ -88,6 +93,7 @@ func nextLine():
 			if(dialogo[str(dialogoParte)].tipo == "dialogo"):
 				# Toma las lineas de la nueva parte
 				loadLines(dialogoParte)
+				# Reinicia las lineas
 				currLine = 0
 			if(dialogo[str(dialogoParte)].tipo == "flores"):
 				sceneManager.changeToFlowers(dialogo[str(dialogoParte)].requisitos);

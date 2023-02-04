@@ -36,7 +36,16 @@ margin_top = -140.0
 margin_right = 564.0
 margin_bottom = -35.0
 theme = ExtResource( 2 )
-text = "Es estupendo"
+autowrap = true
+
+[node name="Nombre" type="Label" parent="."]
+anchor_top = 0.777
+anchor_bottom = 0.79
+margin_left = 153.0
+margin_top = -18.44
+margin_right = 335.0
+margin_bottom = 9.20001
+theme = ExtResource( 2 )
 autowrap = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
