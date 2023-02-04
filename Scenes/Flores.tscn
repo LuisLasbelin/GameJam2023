@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Flor.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Flores.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Themes/Label.tres" type="Theme" id=5]
 
 [node name="Flores" type="Control"]
 anchor_right = 1.0
@@ -21,7 +22,7 @@ anchor_bottom = 0.965
 margin_left = -0.312
 margin_right = -0.448006
 
-[node name="Geranios" type="Control" parent="."]
+[node name="RosasRojas" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 204.0
@@ -30,8 +31,11 @@ margin_right = -1136.0
 margin_bottom = -501.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "Rosa"
+}
 
-[node name="TextureRect" type="TextureRect" parent="Geranios"]
+[node name="TextureRect" type="TextureRect" parent="RosasRojas"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -46,7 +50,7 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="Label" type="Control" parent="Geranios"]
+[node name="Label" type="Control" parent="RosasRojas"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -57,7 +61,7 @@ margin_right = 20.0
 margin_bottom = 20.0
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Geranios/Label"]
+[node name="ColorRect" type="ColorRect" parent="RosasRojas/Label"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -66,21 +70,26 @@ margin_left = -78.0
 margin_top = -178.0
 margin_right = 73.0
 margin_bottom = -48.0
+rect_pivot_offset = Vector2( 40, 108 )
 mouse_filter = 2
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
-[node name="LabelHover" type="Label" parent="Geranios/Label"]
+[node name="LabelHover" type="Label" parent="RosasRojas/Label"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -70.0
-margin_top = -162.0
-margin_right = 70.0
-margin_bottom = -57.0
-text = "Geranios"
+margin_left = -54.0
+margin_top = -161.0
+margin_right = 84.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 16, 91 )
+theme = ExtResource( 5 )
+text = "Rosas Rojas: Pasión, Belleza, Seguridad.
+"
+autowrap = true
 
-[node name="Azucena" type="Control" parent="."]
+[node name="RosasAmarillas" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 423.0
@@ -90,7 +99,7 @@ margin_bottom = -498.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
-[node name="TextureRect" type="TextureRect" parent="Azucena"]
+[node name="TextureRect" type="TextureRect" parent="RosasAmarillas"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -105,18 +114,18 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="Label" type="Control" parent="Azucena"]
+[node name="Label" type="Control" parent="RosasAmarillas"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -20.0
-margin_top = -20.0
+margin_top = -23.0
 margin_right = 20.0
-margin_bottom = 20.0
+margin_bottom = 17.0
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Azucena/Label"]
+[node name="ColorRect" type="ColorRect" parent="RosasAmarillas/Label"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -128,18 +137,21 @@ margin_bottom = -48.0
 mouse_filter = 2
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
-[node name="LabelHover" type="Label" parent="Azucena/Label"]
+[node name="LabelHover" type="Label" parent="RosasAmarillas/Label"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -70.0
-margin_top = -162.0
-margin_right = 70.0
-margin_bottom = -57.0
-text = "Azucena"
+margin_left = -67.0
+margin_top = -155.0
+margin_right = 85.0
+margin_bottom = -46.0
+theme = ExtResource( 5 )
+text = "Rosas Amarillas: Amor agonizante, celos, amistad
+"
+autowrap = true
 
-[node name="Rosa" type="Control" parent="."]
+[node name="Crisantemos" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 649.0
@@ -149,7 +161,7 @@ margin_bottom = -498.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
-[node name="TextureRect" type="TextureRect" parent="Rosa"]
+[node name="TextureRect" type="TextureRect" parent="Crisantemos"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -164,18 +176,18 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="Label" type="Control" parent="Rosa"]
+[node name="Label" type="Control" parent="Crisantemos"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
+margin_left = -34.0
+margin_top = -22.0
+margin_right = 6.0
+margin_bottom = 18.0
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Rosa/Label"]
+[node name="ColorRect" type="ColorRect" parent="Crisantemos/Label"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -187,21 +199,413 @@ margin_bottom = -48.0
 mouse_filter = 2
 color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
 
-[node name="LabelHover" type="Label" parent="Rosa/Label"]
+[node name="LabelHover" type="Label" parent="Crisantemos/Label"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -70.0
-margin_top = -162.0
-margin_right = 70.0
-margin_bottom = -57.0
-text = "Rosa"
+margin_left = -72.0
+margin_top = -181.0
+margin_right = 78.0
+margin_bottom = -44.0
+theme = ExtResource( 5 )
+text = "Crisantemos: Eternidad, amor delicado, dolor por la pérdida de un ser querido"
+autowrap = true
+
+[node name="Violetas" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 204.0
+margin_top = 323.0
+margin_right = -1136.0
+margin_bottom = -297.0
+mouse_default_cursor_shape = 6
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "Rosa"
+}
+
+[node name="TextureRect" type="TextureRect" parent="Violetas"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.5
+margin_top = -28.5
+margin_right = 26.5
+margin_bottom = 28.5
+mouse_filter = 0
+mouse_default_cursor_shape = 6
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Control" parent="Violetas"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Violetas/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -78.0
+margin_top = -178.0
+margin_right = 73.0
+margin_bottom = -48.0
+rect_pivot_offset = Vector2( 40, 108 )
+mouse_filter = 2
+color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
+
+[node name="LabelHover" type="Label" parent="Violetas/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -65.0
+margin_top = -166.0
+margin_right = 84.0
+margin_bottom = -9.0
+rect_pivot_offset = Vector2( 16, 91 )
+theme = ExtResource( 5 )
+text = "Violetas: Confianza, encanto, fidelidad, deseo de amar."
+autowrap = true
+
+[node name="PensamientoMalva" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 204.0
+margin_top = 520.0
+margin_right = -1136.0
+margin_bottom = -100.0
+mouse_default_cursor_shape = 6
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "Rosa"
+}
+
+[node name="TextureRect" type="TextureRect" parent="PensamientoMalva"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.5
+margin_top = -28.5
+margin_right = 26.5
+margin_bottom = 28.5
+mouse_filter = 0
+mouse_default_cursor_shape = 6
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Control" parent="PensamientoMalva"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="PensamientoMalva/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -78.0
+margin_top = -178.0
+margin_right = 73.0
+margin_bottom = -48.0
+rect_pivot_offset = Vector2( 40, 108 )
+mouse_filter = 2
+color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
+
+[node name="LabelHover" type="Label" parent="PensamientoMalva/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -66.0
+margin_top = -181.0
+margin_right = 71.0
+margin_bottom = -16.0
+rect_pivot_offset = Vector2( 16, 91 )
+theme = ExtResource( 5 )
+text = "Pensamiento Malva: Nostalgia del amor perdido, te quiero de vuelta
+."
+autowrap = true
+
+[node name="NoMeOlvides" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 423.0
+margin_top = 321.0
+margin_right = -917.0
+margin_bottom = -299.0
+mouse_default_cursor_shape = 6
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="NoMeOlvides"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.5
+margin_top = -28.5
+margin_right = 26.5
+margin_bottom = 28.5
+mouse_filter = 0
+mouse_default_cursor_shape = 6
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Control" parent="NoMeOlvides"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="NoMeOlvides/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -78.0
+margin_top = -178.0
+margin_right = 73.0
+margin_bottom = -48.0
+mouse_filter = 2
+color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
+
+[node name="LabelHover" type="Label" parent="NoMeOlvides/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -69.0
+margin_top = -177.0
+margin_right = 87.0
+margin_bottom = -40.0
+theme = ExtResource( 5 )
+text = "No me olvides: Deseo de continuar junto a alguien pero tamien de marcharse"
+autowrap = true
+
+[node name="Lirios" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 649.0
+margin_top = 321.0
+margin_right = -691.0
+margin_bottom = -299.0
+mouse_default_cursor_shape = 6
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Lirios"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.5
+margin_top = -28.5
+margin_right = 26.5
+margin_bottom = 28.5
+mouse_filter = 0
+mouse_default_cursor_shape = 6
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Control" parent="Lirios"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.0
+margin_top = -22.0
+margin_right = 6.0
+margin_bottom = 18.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Lirios/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -78.0
+margin_top = -178.0
+margin_right = 73.0
+margin_bottom = -48.0
+mouse_filter = 2
+color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
+
+[node name="LabelHover" type="Label" parent="Lirios/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -68.0
+margin_top = -180.0
+margin_right = 66.0
+margin_bottom = -43.0
+theme = ExtResource( 5 )
+text = "Lirios: Amarte me hace feliz, amor tierno, te quiero y confío en ti"
+autowrap = true
+
+[node name="JunquilloOloroso" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 649.0
+margin_top = 517.0
+margin_right = -691.0
+margin_bottom = -103.0
+mouse_default_cursor_shape = 6
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="JunquilloOloroso"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.5
+margin_top = -28.5
+margin_right = 26.5
+margin_bottom = 28.5
+mouse_filter = 0
+mouse_default_cursor_shape = 6
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Control" parent="JunquilloOloroso"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.0
+margin_top = -22.0
+margin_right = 6.0
+margin_bottom = 18.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="JunquilloOloroso/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -78.0
+margin_top = -178.0
+margin_right = 73.0
+margin_bottom = -48.0
+mouse_filter = 2
+color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
+
+[node name="LabelHover" type="Label" parent="JunquilloOloroso/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -68.0
+margin_top = -180.0
+margin_right = 66.0
+margin_bottom = -43.0
+theme = ExtResource( 5 )
+text = "Lirios: Amarte me hace feliz, amor tierno, te quiero y confío en ti"
+autowrap = true
+
+[node name="MalvaReal" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 439.0
+margin_top = 517.0
+margin_right = -901.0
+margin_bottom = -103.0
+rect_pivot_offset = Vector2( 48, -35 )
+mouse_default_cursor_shape = 6
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="MalvaReal"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.5
+margin_top = -28.5
+margin_right = 26.5
+margin_bottom = 28.5
+mouse_filter = 0
+mouse_default_cursor_shape = 6
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Control" parent="MalvaReal"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.0
+margin_top = -22.0
+margin_right = 6.0
+margin_bottom = 18.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="MalvaReal/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -78.0
+margin_top = -178.0
+margin_right = 73.0
+margin_bottom = -48.0
+mouse_filter = 2
+color = Color( 0.545098, 0.384314, 0.384314, 0.658824 )
+
+[node name="LabelHover" type="Label" parent="MalvaReal/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -68.0
+margin_top = -180.0
+margin_right = 66.0
+margin_bottom = -43.0
+theme = ExtResource( 5 )
+text = "Lirios: Amarte me hace feliz, amor tierno, te quiero y confío en ti"
+autowrap = true
 
 [connection signal="button_down" from="Volver" to="." method="_on_Volver_button_down"]
-[connection signal="mouse_entered" from="Geranios/TextureRect" to="Geranios" method="_on_TextureRect_mouse_entered"]
-[connection signal="mouse_exited" from="Geranios/TextureRect" to="Geranios" method="_on_TextureRect_mouse_exited"]
-[connection signal="mouse_entered" from="Azucena/TextureRect" to="Azucena" method="_on_TextureRect_mouse_entered"]
-[connection signal="mouse_exited" from="Azucena/TextureRect" to="Azucena" method="_on_TextureRect_mouse_exited"]
-[connection signal="mouse_entered" from="Rosa/TextureRect" to="Rosa" method="_on_TextureRect_mouse_entered"]
-[connection signal="mouse_exited" from="Rosa/TextureRect" to="Rosa" method="_on_TextureRect_mouse_exited"]
+[connection signal="mouse_entered" from="RosasRojas/TextureRect" to="RosasRojas" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="RosasRojas/TextureRect" to="RosasRojas" method="_on_TextureRect_mouse_exited"]
+[connection signal="mouse_entered" from="RosasAmarillas/TextureRect" to="RosasAmarillas" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="RosasAmarillas/TextureRect" to="RosasAmarillas" method="_on_TextureRect_mouse_exited"]
+[connection signal="mouse_entered" from="Crisantemos/TextureRect" to="Crisantemos" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="Crisantemos/TextureRect" to="Crisantemos" method="_on_TextureRect_mouse_exited"]
+[connection signal="mouse_entered" from="Violetas/TextureRect" to="Violetas" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="Violetas/TextureRect" to="Violetas" method="_on_TextureRect_mouse_exited"]
+[connection signal="mouse_entered" from="PensamientoMalva/TextureRect" to="PensamientoMalva" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="PensamientoMalva/TextureRect" to="PensamientoMalva" method="_on_TextureRect_mouse_exited"]
+[connection signal="mouse_entered" from="NoMeOlvides/TextureRect" to="NoMeOlvides" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="NoMeOlvides/TextureRect" to="NoMeOlvides" method="_on_TextureRect_mouse_exited"]
+[connection signal="mouse_entered" from="Lirios/TextureRect" to="Lirios" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="Lirios/TextureRect" to="Lirios" method="_on_TextureRect_mouse_exited"]
+[connection signal="mouse_entered" from="JunquilloOloroso/TextureRect" to="JunquilloOloroso" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="JunquilloOloroso/TextureRect" to="JunquilloOloroso" method="_on_TextureRect_mouse_exited"]
+[connection signal="mouse_entered" from="MalvaReal/TextureRect" to="MalvaReal" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="MalvaReal/TextureRect" to="MalvaReal" method="_on_TextureRect_mouse_exited"]
