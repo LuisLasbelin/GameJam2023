@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://blocked.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Scenes/Flores.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Camera.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/SceneManager.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Dialogo.tscn" type="PackedScene" id=6]
+
+[node name="Floristeria" type="Spatial"]
+
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.4603, 0.904217 )
+script = ExtResource( 3 )
+
+[node name="blocked" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.52419, -8.8891, -59.158 )
+mesh = ExtResource( 1 )
+
+[node name="Dialogo" parent="." instance=ExtResource( 6 )]
+
+[node name="Flores" parent="." instance=ExtResource( 2 )]

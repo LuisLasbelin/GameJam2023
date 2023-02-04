@@ -1,0 +1,68 @@
+{
+    "dias" : {
+        "0": {
+            "clientes" : {
+                "0" : {
+                    "nombre" : "Mamá",
+                    "sprite" : "",
+                    "dialogo" : {
+                        "0" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¡Buenos días!",
+                                "Hace un día #estupendo",
+                                "¿Puedes prepararme un bouquet colorido?"
+                            ]
+                        },
+                        "1": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Claro, ahora te lo preparo."
+                            ]
+                        },
+                        "2" : {
+                            "tipo": "flores",
+                            "requisitos": {
+                                "aceptados": [
+                                    "Geranios",
+                                    "Rosas",
+                                    "Azucenas"
+                                ],
+                                "denegados": [
+                                    "Margaritas"
+                                ]
+                            },
+                            "resultados": {
+                                "positivo": 3,
+                                "negativo": 5
+                            }
+                        },
+                        "3" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Es precioso, querida."
+                            ]
+                        },
+                        "4" : {
+                            "tipo": "fin"
+                        },
+                        "5" : {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "No está mal, pero podrías haber prestado más atención a lo que te decía.",
+                                "Nos veremos."
+                            ]
+                        },
+                        "6" : {
+                            "tipo": "fin"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

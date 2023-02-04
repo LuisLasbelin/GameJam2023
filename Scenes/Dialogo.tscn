@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Dialogo.gd" type="Script" id=1]
+
+[node name="Dialogo" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.865
+anchor_top = 0.813
+anchor_right = 0.923
+anchor_bottom = 0.92
+margin_left = 0.239929
+margin_top = 0.199982
+margin_right = -0.152039
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 219.0
+margin_top = 464.0
+margin_right = -210.0
+margin_bottom = -33.0
+visible_characters = 0
+percent_visible = 0.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
