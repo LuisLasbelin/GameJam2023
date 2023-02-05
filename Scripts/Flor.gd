@@ -2,8 +2,9 @@ extends Control
 
 onready var controler = $"."
 onready var imagen = $TextureRect
-onready var parentManager = $".."
+onready var parentManager = $"../.."
 onready var label = $Label
+onready var ramoCont = $"../../Ramo"
 
 
 var mouseOn = false
@@ -15,20 +16,16 @@ func _ready():
 	label.visible = false
 
 
-
 func _on_TextureRect_mouse_entered():
 	mouseOn = true
-	print("in")
 
 
 func _on_TextureRect_mouse_exited():
 	mouseOn = false
-	print("out")
-	
 
 
 func _process(delta):
-	if(mouseOn):
+	if(mouseOn && !Input.is_action_pressed("ui_select")):
 		label.visible = true
 	else:
 		label.visible = false
@@ -39,12 +36,17 @@ func _process(delta):
 			mousePos.y - controler.rect_size.y/2)
 	else:
 		parentManager.flowerTaken = null
-	if(!inBouquet && rect_position.y > 450 && !Input.is_action_pressed("ui_select")):
-		parentManager.flowers.append(controler)
-		inBouquet = true
-		print(parentManager.flowers)
-	if(inBouquet && rect_position.y < 450 && !Input.is_action_pressed("ui_select")):
-		parentManager.flowers.erase(controler)
-		inBouquet = false
-		print(parentManager.flowers)
+#	# Flor colocada
+#	# Ahora se hace desde Flores.gd
+#	if(!inBouquet && ramoCont.rect_position.y < controler.rect_position.y && !Input.is_action_pressed("ui_select")):
+#		parentManager.flowers.append(controler)
+#		inBouquet = true
+#		parentManager.colocadaEffect.play()
+#		print(parentManager.flowers)
+#	# Flor sacada
+#	if(inBouquet && ramoCont.rect_position.y > controler.rect_position.y && !Input.is_action_pressed("ui_select")):
+#		parentManager.flowers.erase(controler)
+#		inBouquet = false
+#		parentManager.quitadaEffect.play()
+#		print(parentManager.flowers)
 
