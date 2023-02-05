@@ -2,6 +2,8 @@ extends Control
 
 
 onready var sceneManager = $"../../SceneManager"
+onready var colocadaEffect = $Colocada
+onready var quitadaEffect = $Quitada
 
 var flowerTaken = null
 var flowers = []
@@ -27,3 +29,15 @@ func puntuarRamo():
 			puntos -= 1
 	
 	return puntos
+
+
+func _on_Area2D_body_entered(body):
+	flowers.append(body.get_parent())
+	colocadaEffect.play()
+	print(flowers)
+
+
+func _on_Area2D_body_exited(body):
+	flowers.erase(body.get_parent())
+	quitadaEffect.play()
+	print(flowers)

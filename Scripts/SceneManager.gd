@@ -8,25 +8,43 @@ onready var clientClass = $"../Cliente"
 onready var nuevoClienteBtn = $"../CanvasLayer/NuevoCliente"
 onready var cambioDiaAnimator = $"../CanvasLayer/CambioDia/DiaAnimator"
 onready var musica = $"../AudioStreamPlayer2D"
+onready var diaText = $"../CanvasLayer/CambioDia/Label/Dia"
 
-var dia: int = 0
+
+var dia: int = -1
 var cliente: int = -1
+export var condicionales = []
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	condicionales = []
 	flores.visible = false
 	dialogo.visible = false
+	# first day
+	dia += 1
+	diaText.text = str(dia+1)
+	# El panel dia debe estar en posicion al principio
 	yield(get_tree().create_timer(2), "timeout")
+	cambioDiaAnimator.play("Salir")
+	cliente = -1
 	newClient()
 
 
 func newClient():
 	cliente += 1
+	var objCliente = Escena1.scenedata.dias[str(dia)].clientes[str(cliente)]
+	if(objCliente.has('conditional')):
+		if(!condicionales.has(objCliente.conditional)):
+			newClient()
+			return
 	clientClass.changeSprite(Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].sprite)
 	flores.visible = false
-	dialogo.visible = true
 	clientClass.clientEnters()
+	yield(get_tree().create_timer(3.5), "timeout")
+	dialogo.visible = true
+	dialogo.loadDialog()
+	dialogo.loadLines(0)
 
 
 func changeToDialog(puntos):
@@ -58,6 +76,7 @@ func endDialog():
 
 func nextDay():
 	dia += 1
+	diaText.text = str(dia+1)
 	cambioDiaAnimator.play("Entrar")
 	yield(get_tree().create_timer(2), "timeout")
 	cambioDiaAnimator.play("Salir")

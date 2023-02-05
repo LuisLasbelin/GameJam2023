@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hombre_hablando.ogg-2830b23d598d5bec38d054f9382f1370.oggstr"
+
+[deps]
+
+source_file="res://Media/hombre_hablando.ogg"
+dest_files=[ "res://.import/hombre_hablando.ogg-2830b23d598d5bec38d054f9382f1370.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

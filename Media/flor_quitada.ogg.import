@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/flor_quitada.ogg-c0bc39311fe531c21a60e1be95d360d9.oggstr"
+
+[deps]
+
+source_file="res://Media/flor_quitada.ogg"
+dest_files=[ "res://.import/flor_quitada.ogg-c0bc39311fe531c21a60e1be95d360d9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

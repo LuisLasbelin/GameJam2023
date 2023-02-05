@@ -12,7 +12,12 @@ config_version=4
 
 config/name="Blooming Roots"
 run/main_scene="res://Scenes/MenuPrincipal.tscn"
-config/icon="res://Sprites/icon.ico"
+boot_splash/show_image=false
+boot_splash/image="res://Sprites/bts_logo-01.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0.0235294, 0.0156863, 0.0823529, 1 )
+config/icon="res://icon.png"
 config/windows_native_icon="res://Sprites/icon.ico"
 
 [autoload]
