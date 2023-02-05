@@ -47,8 +47,8 @@
                 },
                 "2" : {
                     "nombre" : "Dargan",
-                    "sprite" : "res://Sprites/DENIAL_AtRest.png",
-                    "altSprite": "res://Sprites/DENIAL_Talking.png",
+                    "sprite" : "res://Sprites/Characters/DENIAL_AtRest.png",
+                    "altSprite": "res://Sprites/Characters/DENIAL_Talking.png",
                     "tone": "res://Media/hombre_hablando.ogg",
                     "dialogo" : {
                         "0" : {
@@ -336,8 +336,8 @@
                 },
                 "1" : {
                     "nombre" : "Cole",
-                    "sprite" : "res://Sprites/WRATH_TEST_01.png",
-                    "altSprite": "res://Sprites/WRATH_TEST_01.png",
+                    "sprite" : "res://Sprites/Characters/WRATH_AtRest.png",
+                    "altSprite": "res://Sprites/Characters/WRATH_Talking.png",
                     "tone": "res://Media/chaval_hablando.ogg",
                     "dialogo": {
                         "0" : {
@@ -833,8 +833,8 @@
                 "1": {
                     "conditional": "ColeContento",
                     "nombre" : "Cole",
-                    "sprite" : "res://Sprites/WRATH_TEST_01.png",
-                    "altSprite": "res://Sprites/WRATH_TEST_01.png",
+                    "sprite" : "res://Sprites/Characters/WRATH_AtRest.png",
+                    "altSprite": "res://Sprites/Characters/WRATH_Talking.png",
                     "tone": "res://Media/chaval_hablando.ogg",
                     "dialogo": {
                         "0" : {
@@ -1042,8 +1042,8 @@
                 },
                 "2" : {
                     "nombre" : "Bárbara",
-                    "sprite" : "res://Sprites/NEGOTIATION_TEST_01.png",
-                    "altSprite": "res://Sprites/NEGOTIATION_TEST_01.png",
+                    "sprite" : "res://Sprites/Characters/NEGOTIATION_AtRest.png",
+                    "altSprite": "res://Sprites/Characters/NEGOTIATION_Talking.png",
                     "tone": "res://Media/cantante_hablando.ogg",
                     "dialogo": {
                         "0" : {
