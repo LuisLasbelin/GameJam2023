@@ -7,6 +7,7 @@ onready var cliente = $"../../Cliente"
 onready var nombre = $Nombre
 onready var audioPlayer = $AudioEffects
 onready var speakingPlayer = $SpeakingEffect
+onready var dialogAnimator = $DialogAnimator
 
 
 var percText = 0
@@ -28,14 +29,18 @@ func _ready():
 func _process(delta):
 	pass
 
-
-func _on_Button_pressed():
-	if(!escribiendo):
+func _on_Button_button_down():
+	if(escribiendo):
+		completarLinea()
+	else:
 		nextLine()
 
 
 func loadDialog():
 	dialogo = Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].dialogo
+	currLine = 0
+	if(dialogo[str(dialogoParte)].has('reward')):
+		sceneManager.condicionales.append(dialogo[str(dialogoParte)].reward)
 
 
 # Carga las lineas de la parte enviada y el valor dialogo del script
@@ -44,18 +49,11 @@ func loadLines(_part):
 	nextLine()
 
 
-func resolverRamo(puntos = 999):
-	if(puntos != 999):
-		print("Ramo analizado.")
-		# Si los puntos son positivos
-		if(puntos > 0):
-			dialogoParte = dialogo[str(dialogoParte)].resultados.positivo
-			print("Resultado positivo, siguiente parte: ", dialogoParte)
-		else: 
-			dialogoParte = dialogo[str(dialogoParte)].resultados.negativo
-			print("Resultado negativo, siguiente parte: ", dialogoParte)
-		currLine = 0
-		loadLines(dialogoParte)
+func resolverRamo(resultado):
+	print("Ramo resuelto, pasando a ", resultado)
+	currLine = 0
+	dialogoParte = resultado
+	loadLines(resultado)
 
 
 func nextLine():
@@ -69,16 +67,15 @@ func nextLine():
 		if(dialogo[str(dialogoParte)].has('conditional')):
 			if(!sceneManager.condicionales.has(dialogo[str(dialogoParte)].conditional)):
 				return
-		# Recompensas
-		if(dialogo[str(dialogoParte)].has('reward')):
-			sceneManager.condicionales.append(dialogo[str(dialogoParte)].reward)
+		# Dialogo normal
 		if(dialogo[str(dialogoParte)].tipo == "dialogo"):
 			# Reinicia las lineas
 			currLine = 0
+			lineas = []
 			# Toma las lineas de la nueva parte
 			loadLines(dialogoParte)
 		if(dialogo[str(dialogoParte)].tipo == "flores"):
-			sceneManager.changeToFlowers(dialogo[str(dialogoParte)].requisitos);
+			sceneManager.changeToFlowers(dialogo[str(dialogoParte)]);
 			currLine = 0
 			return
 		if(dialogo[str(dialogoParte)].tipo == "jump"):
@@ -87,7 +84,7 @@ func nextLine():
 			return
 		if(dialogo[str(dialogoParte)].tipo == "retake"):
 			dialogoParte = dialogo[str(dialogoParte)].parte
-			sceneManager.changeToFlowers(dialogo[str(dialogoParte)].requisitos);
+			sceneManager.changeToFlowers(dialogo[str(dialogoParte)]);
 			return
 		if(dialogo[str(dialogoParte)].tipo == "sonido"):
 			audioPlayer.stream = load(dialogo[str(dialogoParte)].source)
@@ -103,7 +100,7 @@ func nextLine():
 				sceneManager.cliente = dialogo[str(dialogoParte)].jump - 1
 			# Pasa al siguiente cliente
 			lineas = []
-			dialogoParte = -1
+			dialogoParte = 0
 			dialogeText.text = ""
 			nombre.text = ""
 			sceneManager.endDialog()
@@ -117,13 +114,13 @@ func nextLine():
 			nombre.text = Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].nombre
 			speakingPlayer.stream = load(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].tone)
 			# Comprueba que tenga sprites alternativos
-			if(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite):
+			if(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].has("altSprite")):
 				cliente.changeSprite(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite)
 		if(dialogo[str(dialogoParte)].hablante == "tu"):
 			nombre.text = "Flora"
 			speakingPlayer.stream = load("res://Media/mujer_hablando.ogg")
 			# Comprueba que tenga sprites alternativos
-			if(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].altSprite):
+			if(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].has("altSprite")):
 				cliente.changeSprite(Escena1.scenedata.dias[str(sceneManager.dia)].clientes[str(sceneManager.cliente)].sprite)
 		if(dialogo[str(dialogoParte)].hablante == ""):
 			nombre.text = ""
@@ -133,14 +130,20 @@ func writeLine():
 #	print("Write: ", lineas[currLine])
 	escribiendo = true
 	for letter in lineas[currLine]:
-		# pausa cada almohadilla
-		if(letter == "#"):
-			yield(get_tree().create_timer(0.5), "timeout")
-			# elimina el simbolo del texto
-		else:
-			dialogeText.text += letter
-			speakingPlayer.play()
-			yield(get_tree().create_timer(waiting), "timeout")
+		if(escribiendo):
+			# pausa cada almohadilla
+			if(letter == "#"):
+				yield(get_tree().create_timer(0.5), "timeout")
+				# elimina el simbolo del texto
+			else:
+				dialogeText.text += letter
+				speakingPlayer.play()
+				yield(get_tree().create_timer(waiting), "timeout")
 	# Termina de escribir
 	currLine += 1
 	escribiendo = false
+
+
+func completarLinea():
+	escribiendo = false
+	dialogeText.text = lineas[currLine].replace("#", "")

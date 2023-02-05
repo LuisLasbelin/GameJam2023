@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DENIAL_AtRest.png-2b764f71cb98c157693ac8a4dd8a8517.stex"
+path="res://.import/DENIAL_AtRest.png-a6a341f998a329b9a7b1226a0f30fd17.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/DENIAL_AtRest.png"
-dest_files=[ "res://.import/DENIAL_AtRest.png-2b764f71cb98c157693ac8a4dd8a8517.stex" ]
+source_file="res://Sprites/Characters/DENIAL_AtRest.png"
+dest_files=[ "res://.import/DENIAL_AtRest.png-a6a341f998a329b9a7b1226a0f30fd17.stex" ]
 
 [params]
 

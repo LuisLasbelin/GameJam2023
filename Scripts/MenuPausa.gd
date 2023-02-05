@@ -19,10 +19,6 @@ func set_is_paused(value):
 	visible = is_paused
 
 
-func _on_Salir_pressed():
-	get_tree().quit
-
-
 func _on_Volumen_pressed():
 	ControlVolumen.visible = true
 
@@ -33,7 +29,9 @@ func _on_HSliderVolumen_value_changed(value):
 
 
 func _on_Salir_button_down():
-	get_tree().quit()
+	is_paused = false
+	get_tree().paused = is_paused
+	get_tree().change_scene("res://Scenes/MenuPrincipal.tscn")
 
 
 func _on_Continuar_pressed():

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DENIAL_Talking.png-f4de9842c3006cc39005ddc3fa186299.stex"
+path="res://.import/DENIAL_Talking.png-87ca8c0e0e41bcdaa591429dfc9519a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/DENIAL_Talking.png"
-dest_files=[ "res://.import/DENIAL_Talking.png-f4de9842c3006cc39005ddc3fa186299.stex" ]
+source_file="res://Sprites/Characters/DENIAL_Talking.png"
+dest_files=[ "res://.import/DENIAL_Talking.png-87ca8c0e0e41bcdaa591429dfc9519a3.stex" ]
 
 [params]
 
