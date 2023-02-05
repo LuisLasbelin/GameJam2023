@@ -13,10 +13,12 @@ onready var diaText = $"../CanvasLayer/CambioDia/Label/Dia"
 
 var dia: int = -1
 var cliente: int = -1
+export var condicionales = []
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	condicionales = []
 	flores.visible = false
 	dialogo.visible = false
 	# first day
@@ -31,6 +33,11 @@ func _ready():
 
 func newClient():
 	cliente += 1
+	var objCliente = Escena1.scenedata.dias[str(dia)].clientes[str(cliente)]
+	if(objCliente.has('conditional')):
+		if(!condicionales.has(objCliente.conditional)):
+			newClient()
+			return
 	clientClass.changeSprite(Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].sprite)
 	flores.visible = false
 	clientClass.clientEnters()

@@ -31,6 +31,21 @@
                     }
                 },
                 "1" : {
+                    "conditional": "debug",
+                    "nombre" : "Devs",
+                    "sprite" : "",
+                    "altSprite": "",
+                    "dialogo": {
+                        "0" : {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Aquí se comprueban condicionales de cliente. No tocar >:("
+                            ]
+                        }
+                    }
+                },
+                "2" : {
                     "nombre" : "Dargan",
                     "sprite" : "res://Sprites/DENIAL_AtRest.png",
                     "altSprite": "res://Sprites/DENIAL_Talking.png",
@@ -273,7 +288,7 @@
                         }
                     }
                 },
-                "2" : {
+                "3" : {
                     "nombre" : "Flora",
                     "sprite" : "",
                     "altSprite": "",

@@ -17,7 +17,6 @@ var dialogo = {}
 var dialogoParte = 0
 var escribiendo = false
 var textoPausado = false
-var condicionales = []
 
 
 # Called when the node enters the scene tree for the first time.
@@ -68,11 +67,11 @@ func nextLine():
 		dialogoParte += 1
 		# Condicionales
 		if(dialogo[str(dialogoParte)].has('conditional')):
-			if(!condicionales.has(dialogo[str(dialogoParte)].conditional)):
+			if(!sceneManager.condicionales.has(dialogo[str(dialogoParte)].conditional)):
 				return
 		# Recompensas
 		if(dialogo[str(dialogoParte)].has('reward')):
-			condicionales.append(dialogo[str(dialogoParte)].reward)
+			sceneManager.condicionales.append(dialogo[str(dialogoParte)].reward)
 		if(dialogo[str(dialogoParte)].tipo == "dialogo"):
 			# Reinicia las lineas
 			currLine = 0
