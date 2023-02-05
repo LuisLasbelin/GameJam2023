@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/MenuPausa.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/OpcionesVolumen.tscn" type="PackedScene" id=2]
 
 [node name="MenuPausa" type="Control"]
 pause_mode = 2
@@ -19,9 +20,9 @@ anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 685.0
-margin_top = 314.0
+margin_top = 316.0
 margin_right = 754.0
-margin_bottom = 406.0
+margin_bottom = 404.0
 
 [node name="Pausado" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 69.0
@@ -57,29 +58,8 @@ margin_top = 88.0
 margin_right = 69.0
 margin_bottom = 88.0
 
-[node name="ControlesVolumen" type="Control" parent="CenterContainer/VBoxContainer"]
-margin_top = 92.0
-margin_right = 69.0
-margin_bottom = 92.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/ControlesVolumen"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="EtiquetaVolumen" type="Label" parent="CenterContainer/VBoxContainer/ControlesVolumen/VBoxContainer"]
-margin_right = 107.0
-margin_bottom = 14.0
-text = "Control Volumen"
-
-[node name="HSliderVolumen" type="HSlider" parent="CenterContainer/VBoxContainer/ControlesVolumen/VBoxContainer"]
-margin_top = 18.0
-margin_right = 107.0
-margin_bottom = 34.0
-rect_min_size = Vector2( 10, 10 )
-min_value = -30.0
-max_value = 0.0
+[node name="OpcionesVolumen" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [connection signal="button_down" from="CenterContainer/VBoxContainer/Salir" to="." method="_on_Salir_button_down"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Volumen" to="." method="_on_Volumen_pressed"]
-[connection signal="changed" from="CenterContainer/VBoxContainer/ControlesVolumen/VBoxContainer/HSliderVolumen" to="." method="_on_HSliderVolumen_changed"]
-[connection signal="value_changed" from="CenterContainer/VBoxContainer/ControlesVolumen/VBoxContainer/HSliderVolumen" to="." method="_on_HSliderVolumen_value_changed"]

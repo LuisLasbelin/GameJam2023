@@ -5,10 +5,10 @@
 [ext_resource path="res://Scenes/Flores.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/MenuPausa.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Cliente.gd" type="Script" id=5]
-[ext_resource path="res://Media/FX_Abrir puerta campana.wav" type="AudioStream" id=6]
 [ext_resource path="res://Themes/Dialogo.tres" type="Theme" id=7]
-[ext_resource path="res://Media/pasos.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sprites/DENIAL_AtRest.png" type="Texture" id=9]
+[ext_resource path="res://Media/pasos.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Media/door_open.ogg" type="AudioStream" id=11]
 
 [sub_resource type="Animation" id=3]
 resource_name = "ColocarPanel"
@@ -84,7 +84,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3.4 ),
+"times": PoolRealArray( 0, 3.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1900, 644 ), Vector2( 800, 644 ) ]
@@ -113,9 +113,13 @@ tracks/2/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 11 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0, 3.5 )
 }
 tracks/3/type = "audio"
 tracks/3/path = NodePath("Pasos")
@@ -126,8 +130,8 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "clips": [ {
 "end_offset": 0.0,
-"start_offset": 2.0,
-"stream": ExtResource( 8 )
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -176,8 +180,8 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
-"start_offset": 3.0,
-"stream": ExtResource( 8 )
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -255,7 +259,7 @@ anims/Salir = SubResource( 7 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Cliente"]
-position = Vector2( 1900, 644 )
+position = Vector2( 800, 644 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 9 )
 
@@ -265,7 +269,9 @@ anims/Hablar = SubResource( 2 )
 anims/Salida = SubResource( 5 )
 
 [node name="Entrada" type="AudioStreamPlayer" parent="Cliente"]
-stream = ExtResource( 6 )
+stream = ExtResource( 11 )
+bus = "Effects"
 
 [node name="Pasos" type="AudioStreamPlayer" parent="Cliente"]
-stream = ExtResource( 8 )
+stream = ExtResource( 10 )
+bus = "Effects"

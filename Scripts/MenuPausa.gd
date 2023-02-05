@@ -5,7 +5,7 @@ var is_paused = false setget set_is_paused
 var master_bus = AudioServer.get_bus_index("Master")
 
 
-onready var ControlVolumen = $CenterContainer/VBoxContainer/ControlesVolumen
+onready var ControlVolumen = $OpcionesVolumen
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("pause"):
@@ -36,9 +36,8 @@ func _on_MenuPausa_ready():
 
 
 func _on_Volumen_pressed():
-	#print("pulsado volumen")
 	
-	ControlVolumen.visible = !ControlVolumen.visible 
+	ControlVolumen.visible = true
 
 
 func _on_Continuar_button_up():

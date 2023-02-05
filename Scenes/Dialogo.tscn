@@ -49,7 +49,9 @@ theme = ExtResource( 2 )
 autowrap = true
 
 [node name="AudioEffects" type="AudioStreamPlayer" parent="."]
+bus = "Effects"
 
 [node name="SpeakingEffect" type="AudioStreamPlayer" parent="."]
+bus = "Effects"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

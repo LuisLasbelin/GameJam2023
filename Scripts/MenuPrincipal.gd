@@ -11,7 +11,7 @@ func _on_Salir_pressed():
 
 
 func _on_Opciones_pressed():
-	get_tree().change_scene("res://Scenes/MenuOpciones.tscn")
+	get_tree().change_scene("res://Scenes/OpcionesVolumen.tscn")
 
 
 func _on_Comenzar_Paritida_pressed():
