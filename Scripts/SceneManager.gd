@@ -5,9 +5,8 @@ onready var dialogo = $"../CanvasLayer/Dialogo"
 onready var flores = $"../CanvasLayer/Flores"
 onready var animator = $"../CanvasLayer/PanelsAnimator"
 onready var clientClass = $"../Cliente"
-onready var nuevoClienteBtn = $"../CanvasLayer/NuevoCliente"
 onready var cambioDiaAnimator = $"../CanvasLayer/CambioDia/DiaAnimator"
-onready var musica = $"../AudioStreamPlayer2D"
+onready var musica = $"../Musica"
 onready var diaText = $"../CanvasLayer/CambioDia/Label/Dia"
 
 
@@ -20,12 +19,11 @@ export var condicionales = []
 func _ready():
 	condicionales = []
 	flores.visible = false
-	dialogo.visible = false
 	# first day
 	dia += 1
 	diaText.text = str(dia+1)
 	# El panel dia debe estar en posicion al principio
-	yield(get_tree().create_timer(2), "timeout")
+	yield(get_tree().create_timer(1), "timeout")
 	cambioDiaAnimator.play("Salir")
 	cliente = -1
 	newClient()
@@ -33,41 +31,48 @@ func _ready():
 
 func newClient():
 	cliente += 1
+	if(cliente >= Escena1.scenedata.dias[str(dia)].clientes.size()):
+		nextDay()
 	var objCliente = Escena1.scenedata.dias[str(dia)].clientes[str(cliente)]
 	if(objCliente.has('conditional')):
 		if(!condicionales.has(objCliente.conditional)):
 			newClient()
 			return
-	clientClass.changeSprite(Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].sprite)
+	if(Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].has("sprite")):
+		clientClass.changeSprite(Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].sprite)
+		clientClass.clientEnters()
 	flores.visible = false
-	clientClass.clientEnters()
 	yield(get_tree().create_timer(3.5), "timeout")
-	dialogo.visible = true
+	dialogo.dialogAnimator.play("Enter")
 	dialogo.loadDialog()
-	dialogo.loadLines(0)
+	dialogo.loadLines(dialogo.currLine)
 
 
-func changeToDialog(puntos):
+func changeToDialog(res):
 	animator.play("QuitarPanel")
+	dialogo.dialogAnimator.play("Enter")
 	yield(get_tree().create_timer(1), "timeout")
-	dialogo.resolverRamo(puntos)
+	dialogo.dialogoParte += 1
+	dialogo.resolverRamo(res)
 	flores.visible = false
-	dialogo.visible = true
 
 
-func changeToFlowers(requisitos):
+func changeToFlowers(dialogoObj):
 	flores.visible = true
-	dialogo.visible = false
-	flores.requisitos = requisitos
+	dialogo.dialogAnimator.play("Exit")
+	flores.dialogo = dialogoObj
+	flores.textoAyuda(dialogoObj.ayuda)
+	flores.reiniciarPosiciones()
 	animator.play("ColocarPanel")
 
 
 func endDialog():
-	dialogo.visible = false
-	clientClass.clientExit()
+	dialogo.dialogAnimator.play("Exit")
+	if(Escena1.scenedata.dias[str(dia)].clientes[str(cliente)].has("sprite")):
+		clientClass.clientExit()
 	yield(get_tree().create_timer(2), "timeout")
 	if(cliente < Escena1.scenedata.dias[str(dia)].clientes.size() - 1):
-		yield(get_tree().create_timer(2), "timeout")
+		yield(get_tree().create_timer(1), "timeout")
 		newClient()
 	else:
 		# llega al final del dia
@@ -76,9 +81,12 @@ func endDialog():
 
 func nextDay():
 	dia += 1
-	diaText.text = str(dia+1)
-	cambioDiaAnimator.play("Entrar")
-	yield(get_tree().create_timer(2), "timeout")
-	cambioDiaAnimator.play("Salir")
-	cliente = -1
-	newClient()
+	if(dia < Escena1.scenedata.dias.size()):
+		diaText.text = str(dia+1)
+		cambioDiaAnimator.play("Entrar")
+		yield(get_tree().create_timer(2), "timeout")
+		cambioDiaAnimator.play("Salir")
+		cliente = -1
+		newClient()
+	else: 
+		get_tree().change_scene("res://Scenes/Final.tscn")

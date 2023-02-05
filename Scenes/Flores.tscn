@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Flor.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Flores.gd" type="Script" id=2]
@@ -14,39 +14,57 @@
 [ext_resource path="res://Sprites/Flores/Nomeolvides.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Flores/lirio_amarillo.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/Flores/malva_real.png" type="Texture" id=14]
+[ext_resource path="res://Themes/boton_vacio.tres" type="Theme" id=15]
+[ext_resource path="res://Sprites/estanteria.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/boton_entregar.png" type="Texture" id=17]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 330.5, 85.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 77, 45 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 138.5, 38.5 )
 
 [node name="Flores" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.601845, 0.601845 )
+texture = ExtResource( 16 )
+
+[node name="Ramo" type="Control" parent="."]
+anchor_top = 1.0
+anchor_right = 0.174
+anchor_bottom = 1.0
+margin_left = 179.0
+margin_top = -101.0
+margin_right = 240.44
+margin_bottom = -5.0
+mouse_filter = 2
+
+[node name="Area2D" type="Area2D" parent="Ramo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramo/Area2D"]
+position = Vector2( 246.5, 86.5 )
+shape = SubResource( 2 )
+
+[node name="FloresCont" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="Volver" type="Button" parent="."]
-anchor_top = 0.927
-anchor_bottom = 0.927
-margin_left = 18.408
-margin_top = -26.6401
-margin_right = 146.432
-margin_bottom = 27.3599
-
-[node name="FloresCont" type="Node" parent="."]
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="RosasRojas" type="Control" parent="FloresCont"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 100.0
-margin_top = 106.0
-margin_right = -1204.0
-margin_bottom = -529.0
+margin_left = 202.0
+margin_top = 136.0
+margin_right = -1095.0
+margin_bottom = -512.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 __meta__ = {
@@ -112,16 +130,16 @@ autowrap = true
 mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloresCont/RosasRojas/RigidBody2D"]
-position = Vector2( 67, 35 )
+position = Vector2( 72, 35 )
 shape = SubResource( 1 )
 
 [node name="RosasAmarillas" type="Control" parent="FloresCont"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 423.0
-margin_top = 122.0
-margin_right = -917.0
-margin_bottom = -498.0
+margin_left = 514.0
+margin_top = 141.0
+margin_right = -800.0
+margin_bottom = -514.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -181,16 +199,16 @@ autowrap = true
 mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloresCont/RosasAmarillas/RigidBody2D"]
-position = Vector2( 67, 35 )
+position = Vector2( 72, 25 )
 shape = SubResource( 1 )
 
 [node name="Crisantemos" type="Control" parent="FloresCont"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 649.0
-margin_top = 122.0
-margin_right = -691.0
-margin_bottom = -498.0
+margin_left = 816.0
+margin_top = 143.0
+margin_right = -486.0
+margin_bottom = -507.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -199,10 +217,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -46.0
-margin_top = -69.0
-margin_right = 71.0
-margin_bottom = 30.0
+margin_left = -75.0
+margin_top = -64.0
+margin_right = 42.0
+margin_bottom = 35.0
 mouse_filter = 0
 mouse_default_cursor_shape = 6
 texture = ExtResource( 9 )
@@ -249,16 +267,16 @@ autowrap = true
 mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloresCont/Crisantemos/RigidBody2D"]
-position = Vector2( 67, 35 )
+position = Vector2( 51, 20 )
 shape = SubResource( 1 )
 
 [node name="Violetas" type="Control" parent="FloresCont"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 204.0
-margin_top = 323.0
-margin_right = -1136.0
-margin_bottom = -297.0
+margin_left = 1102.0
+margin_top = 136.0
+margin_right = -214.0
+margin_bottom = -517.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 __meta__ = {
@@ -270,10 +288,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -71.0
-margin_top = 19.0
-margin_right = 25.0
-margin_bottom = 160.0
+margin_left = -79.0
+margin_top = 32.5
+margin_right = 17.0
+margin_bottom = 173.5
 rect_rotation = -82.0378
 mouse_filter = 0
 mouse_default_cursor_shape = 6
@@ -323,16 +341,16 @@ autowrap = true
 mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloresCont/Violetas/RigidBody2D"]
-position = Vector2( 67, 35 )
+position = Vector2( 62, 33 )
 shape = SubResource( 1 )
 
 [node name="PensamientoMalva" type="Control" parent="FloresCont"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 204.0
-margin_top = 520.0
-margin_right = -1136.0
-margin_bottom = -100.0
+margin_left = 302.0
+margin_top = 311.0
+margin_right = -1023.0
+margin_bottom = -312.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 __meta__ = {
@@ -344,10 +362,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -49.0
-margin_top = -67.0
-margin_right = 71.0
-margin_bottom = 34.0
+margin_left = -60.5
+margin_top = -59.5
+margin_right = 59.5
+margin_bottom = 41.5
 mouse_filter = 0
 mouse_default_cursor_shape = 6
 texture = ExtResource( 11 )
@@ -396,16 +414,16 @@ autowrap = true
 mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloresCont/PensamientoMalva/RigidBody2D"]
-position = Vector2( 67, 35 )
+position = Vector2( 55, 41 )
 shape = SubResource( 1 )
 
 [node name="NoMeOlvides" type="Control" parent="FloresCont"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 423.0
-margin_top = 321.0
-margin_right = -917.0
-margin_bottom = -299.0
+margin_left = 698.0
+margin_top = 311.0
+margin_right = -588.0
+margin_bottom = -327.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -414,10 +432,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -59.0
-margin_top = 21.0
-margin_right = 45.0
-margin_bottom = 159.0
+margin_left = -74.0
+margin_top = 24.0
+margin_right = 30.0
+margin_bottom = 162.0
 rect_rotation = -77.0571
 mouse_filter = 0
 mouse_default_cursor_shape = 6
@@ -465,16 +483,16 @@ autowrap = true
 mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloresCont/NoMeOlvides/RigidBody2D"]
-position = Vector2( 67, 35 )
+position = Vector2( 82, 25 )
 shape = SubResource( 1 )
 
 [node name="Lirios" type="Control" parent="FloresCont"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 649.0
-margin_top = 321.0
-margin_right = -691.0
-margin_bottom = -299.0
+margin_left = 1065.0
+margin_top = 293.0
+margin_right = -260.0
+margin_bottom = -321.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -483,10 +501,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -47.0
-margin_top = -75.0
-margin_right = 69.0
-margin_bottom = 29.0
+margin_left = -68.5
+margin_top = -56.0
+margin_right = 47.5
+margin_bottom = 48.0
 mouse_filter = 0
 mouse_default_cursor_shape = 6
 texture = ExtResource( 13 )
@@ -533,16 +551,16 @@ autowrap = true
 mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloresCont/Lirios/RigidBody2D"]
-position = Vector2( 67, 35 )
+position = Vector2( 43, 55 )
 shape = SubResource( 1 )
 
 [node name="JunquilloOloroso" type="Control" parent="FloresCont"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 649.0
-margin_top = 517.0
-margin_right = -691.0
-margin_bottom = -103.0
+margin_left = 427.0
+margin_top = 478.0
+margin_right = -857.0
+margin_bottom = -159.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 
@@ -551,10 +569,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -69.0
-margin_top = 5.99997
-margin_right = 15.0
-margin_bottom = 151.0
+margin_left = -78.0
+margin_top = 26.5
+margin_right = 6.0
+margin_bottom = 171.5
 rect_rotation = -71.2966
 mouse_filter = 0
 mouse_default_cursor_shape = 6
@@ -567,10 +585,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -34.0
-margin_top = -22.0
-margin_right = 6.0
-margin_bottom = 18.0
+margin_left = -14.0
+margin_top = -13.5
+margin_right = 26.0
+margin_bottom = 26.5
 mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="FloresCont/JunquilloOloroso/Label"]
@@ -602,16 +620,16 @@ autowrap = true
 mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloresCont/JunquilloOloroso/RigidBody2D"]
-position = Vector2( 67, 35 )
+position = Vector2( 84, 40 )
 shape = SubResource( 1 )
 
 [node name="MalvaReal" type="Control" parent="FloresCont"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 439.0
-margin_top = 517.0
-margin_right = -901.0
-margin_bottom = -103.0
+margin_left = 938.0
+margin_top = 475.0
+margin_right = -330.0
+margin_bottom = -153.0
 rect_pivot_offset = Vector2( 48, -35 )
 mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
@@ -621,10 +639,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 68.0
-margin_top = -94.0
-margin_right = 164.0
-margin_bottom = 54.0
+margin_left = 43.0
+margin_top = -75.0
+margin_right = 139.0
+margin_bottom = 73.0
 rect_rotation = 66.4341
 mouse_filter = 0
 mouse_default_cursor_shape = 6
@@ -672,30 +690,8 @@ autowrap = true
 mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloresCont/MalvaReal/RigidBody2D"]
-position = Vector2( 67, 35 )
+position = Vector2( 79, 50 )
 shape = SubResource( 1 )
-
-[node name="Ramo" type="Control" parent="."]
-anchor_top = 1.0
-anchor_right = 0.174
-anchor_bottom = 1.0
-margin_left = 179.0
-margin_top = -101.0
-margin_right = 240.44
-margin_bottom = -5.0
-mouse_filter = 2
-
-[node name="ColorRect" type="ColorRect" parent="Ramo"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-color = Color( 0.611765, 0.611765, 0.611765, 1 )
-
-[node name="Area2D" type="Area2D" parent="Ramo"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramo/Area2D"]
-position = Vector2( 157.5, 49.5 )
-shape = SubResource( 2 )
 
 [node name="Colocada" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -705,7 +701,33 @@ bus = "Effects"
 stream = ExtResource( 7 )
 bus = "Effects"
 
-[connection signal="button_down" from="Volver" to="." method="_on_Volver_button_down"]
+[node name="Ayuda" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -368.0
+margin_top = -115.0
+margin_right = -18.0
+theme = ExtResource( 5 )
+text = "Ayuda:"
+autowrap = true
+
+[node name="Volver" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 51.0
+margin_top = -106.0
+margin_right = 1814.0
+margin_bottom = 501.0
+rect_scale = Vector2( 0.161683, 0.161683 )
+theme = ExtResource( 15 )
+icon = ExtResource( 17 )
+
+[connection signal="body_entered" from="Ramo/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Ramo/Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="mouse_entered" from="FloresCont/RosasRojas/TextureRect" to="FloresCont/RosasRojas" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="FloresCont/RosasRojas/TextureRect" to="FloresCont/RosasRojas" method="_on_TextureRect_mouse_exited"]
 [connection signal="mouse_entered" from="FloresCont/RosasAmarillas/TextureRect" to="FloresCont/RosasAmarillas" method="_on_TextureRect_mouse_entered"]
@@ -724,5 +746,4 @@ bus = "Effects"
 [connection signal="mouse_exited" from="FloresCont/JunquilloOloroso/TextureRect" to="FloresCont/JunquilloOloroso" method="_on_TextureRect_mouse_exited"]
 [connection signal="mouse_entered" from="FloresCont/MalvaReal/TextureRect" to="FloresCont/MalvaReal" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="FloresCont/MalvaReal/TextureRect" to="FloresCont/MalvaReal" method="_on_TextureRect_mouse_exited"]
-[connection signal="body_entered" from="Ramo/Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Ramo/Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="button_down" from="Volver" to="." method="_on_Volver_button_down"]

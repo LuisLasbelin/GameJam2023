@@ -4,10 +4,9 @@
             "clientes": {
                 "0": {
                     "nombre": "Flora",
-                    "sprite": "",
-                    "altSprite": "",
                     "dialogo": {
                         "0": {
+                            "reward": "debug_reward",
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
@@ -211,14 +210,19 @@
                         },
                         "20": {
                             "tipo": "flores",
+                            "ayuda": "Quiero un ramo para desearle buena suerte a mi hija. Flores oscuras y silvestres. Que no sea recargado. Al menos 3 flores.",
                             "requisitos": {
                                 "aceptados": [
-                                    "Geranios",
-                                    "Rosas",
-                                    "Azucenas"
+                                    "RosasRojas",
+                                    "PensamientosMalva",
+                                    "MalvaReal",
+                                    "Violetas"
                                 ],
                                 "denegados": [
-                                    "Margaritas"
+                                    "NoMeOlvides",
+                                    "RosasAmarillas",
+                                    "Lirios",
+                                    "JunquilloOroloso"
                                 ]
                             },
                             "resultados": {
@@ -290,12 +294,10 @@
                 },
                 "3": {
                     "nombre": "Flora",
-                    "sprite": "",
-                    "altSprite": "",
                     "dialogo": {
                         "0": {
                             "tipo": "dialogo",
-                            "hablante": "cliente",
+                            "hablante": "tu",
                             "lineas": [
                                 "AAAAGH. No puede ser verdad.",
                                 "No me puedo creer que mi primer cliente sea el cretino de...",
@@ -315,8 +317,6 @@
             "clientes": {
                 "0": {
                     "nombre": "Flora",
-                    "sprite": "",
-                    "altSprite": "",
                     "dialogo": {
                         "0": {
                             "tipo": "dialogo",
@@ -595,14 +595,18 @@
                         },
                         "34": {
                             "tipo": "flores",
+                            "ayuda": "Necesito un gran ramo para pedirle disculpas a mi pareja. Se llama violeta y le gustan las flores moradas. Al menos 5 flores.",
                             "requisitos": {
                                 "aceptados": [
-                                    "Geranios",
-                                    "Rosas",
-                                    "Azucenas"
+                                    "Violetas",
+                                    "PensamientosMalva",
+                                    "JunquilloOloroso",
+                                    "RosasRojas"
                                 ],
                                 "denegados": [
-                                    "Margaritas"
+                                    "Crisantemos",
+                                    "Lirios",
+                                    "NoMeOlvides"
                                 ]
                             },
                             "resultados": {
@@ -745,6 +749,7 @@
                             ]
                         },
                         "52": {
+                            "reward": "ColeEnfadado",
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
@@ -761,8 +766,6 @@
                 },
                 "2": {
                     "nombre": "Flora",
-                    "sprite": "",
-                    "altSprite": "",
                     "dialogo": {
                         "0": {
                             "tipo": "sonido",
@@ -780,14 +783,13 @@
                             ]
                         },
                         "2": {
-                            "type": "fin"
+                            "tipo": "fin"
                         }
                     }
                 },
                 "3": {
+                    "conditional": "ColeEnfadado",
                     "nombre": "Flora",
-                    "sprite": "",
-                    "altSprite": "",
                     "dialogo": {
                         "0": {
                             "tipo": "sonido",
@@ -806,7 +808,7 @@
                             ]
                         },
                         "2": {
-                            "type": "fin"
+                            "tipo": "fin"
                         }
                     }
                 }
@@ -816,8 +818,6 @@
             "clientes": {
                 "0": {
                     "nombre": "Flora",
-                    "sprite": "",
-                    "altSprite": "",
                     "tone": "res://Media/mujer_hablando.ogg",
                     "dialogo": {
                         "0": {
@@ -827,6 +827,9 @@
                                 "Hoy es un viernes... Alguien debería aparecer hoy, casi seguro.",
                                 "Apenas son las 9:30, no voy a preocuparme demasiado."
                             ]
+                        },
+                        "1":{
+                            "tipo": "fin"
                         }
                     }
                 },
@@ -1361,22 +1364,30 @@
                         },
                         "38": {
                             "tipo": "flores",
+                            "ayuda": "Quiero un ramo que signifique admiración o envidia: tú eliges. Debe tener al menos una rosa y al menos 3 flores.",
                             "requisitos": {
                                 "aceptados": [
-                                    "Geranios",
-                                    "Rosas",
-                                    "Azucenas"
+                                    "RosasRojas",
+                                    "Lirios",
+                                    "Violetas",
+                                    "MalvaReal"
+                                ],
+                                "especial": [
+                                    "RosasAmarillas"
                                 ],
                                 "denegados": [
-                                    "Margaritas"
+                                    "JunquilloOroloso",
+                                    "PensamientoMalva"
                                 ]
                             },
                             "resultados": {
                                 "positivo": 39,
-                                "negativo": 47
+                                "negativo": 47,
+                                "positivoAlt": 52
                             }
                         },
                         "39": {
+                            "reward" : "BarbaraAdmiracion",
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
@@ -1429,7 +1440,7 @@
                             ]
                         },
                         "46": {
-                            "type": "fin"
+                            "tipo": "fin"
                         },
                         "47": {
                             "tipo": "dialogo",
@@ -1468,6 +1479,60 @@
                                 "Bueno, mira, toma el dinero que llevo encima, que son 13 pavos y... yo qué sé. Ya veré si se lo doy o no...",
                                 "Graaaacias, supongo."
                             ]
+                        },
+                        "52": {
+                            "reward": "BarbaraEnvidia",
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¡GUAU! Pedazo de rosa que hay ahi. ¡Si no pilla eso es que soy tonta!",
+                                "O sea, ella. Ella es tonta.",
+                                "¡Qué chulada, me encanta!"
+                            ]
+                        },
+                        "53": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Me alegro de que te guste entonces."
+                            ]
+                        },
+                        "54": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¡Sí! Vamos que si me gusta. Envidia le voy a dar yo a ella cuando vea que le doy el ramo."
+                            ]
+                        },
+                        "55": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Espera... Pero ¿cómo?"
+                            ]
+                        },
+                        "56": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Pues.",
+                                "...............",
+                                "NI IDEA. Pero seguro que dice *Hala, que tía más chula es... Creo que la amo*"
+                            ]
+                        },
+                        "57": {
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "¿Que te ama?"
+                            ]
+                        },
+                        "58": {
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "Bueno, muchas gracias por todo, aquí tienes la pasta, ¡adióooos!"
+                            ]
                         }
                     }
                 }
@@ -1477,8 +1542,8 @@
             "clientes": {
                 "0": {
                     "nombre": "Barbara",
-                    "sprite": "",
-                    "altSprite": "",
+                    "sprite": "res://Sprites/Characters/NEGOTIATION_AtRest.png",
+                    "altSprite": "res://Sprites/Characters/NEGOTIATION_Talking.png",
                     "tone": "res://Media/mujer_hablando.ogg",
                     "dialogo": {
                         "0": {
@@ -1510,7 +1575,7 @@
                             ]
                         },
                         "4": {
-                            "conditional": "Envidia",
+                            "conditional": "BarbaraEnvidia",
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
@@ -1520,27 +1585,36 @@
                             ]
                         },
                         "5": {
+                            "conditional": "BarbaraAdmiracion",
+                            "tipo": "dialogo",
+                            "hablante": "cliente",
+                            "lineas": [
+                                "¿Recuerdas que te lo hice hacer sobre mis sentimientos?",
+                                "¿En concreto sobre lo mucho que la admiraba?"
+                            ]
+                        },
+                        "6": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
                                 "Sí, fue ayer."
                             ]
                         },
-                        "6": {
+                        "7": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
                                 "Vale, pues hazme el otro.."
                             ]
                         },
-                        "7": {
+                        "8": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
                                 "¿El otro?"
                             ]
                         },
-                        "8": {
+                        "9": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
@@ -1550,27 +1624,30 @@
                                 "No sé, como que es un sentimiento exagerado."
                             ]
                         },
-                        "9": {
+                        "10": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
                                 "¿Exagerado? ¿Y tú crees que este no lo es?"
                             ]
                         },
-                        "10": {
+                        "11": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
                                 "No. Este lo siento de verdad."
                             ]
                         },
-                        "11": {
+                        "12": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
                                 "Ya",
                                 "Bueno, pues nada. Vamos a ello."
                             ]
+                        },
+                        "13" : {
+                            "tipo" : "fin"
                         }
                     }
                 }
@@ -1580,8 +1657,8 @@
             "clientes": {
                 "0": {
                     "nombre": "Barbara",
-                    "sprite": "",
-                    "altSprite": "",
+                    "sprite": "res://Sprites/Characters/NEGOTIATION_AtRest.png",
+                    "altSprite": "res://Sprites/Characters/NEGOTIATION_AtRest.png",
                     "tone": "res://Media/mujer_hablando.ogg",
                     "dialogo": {
                         "0": {
@@ -1613,7 +1690,7 @@
                             ]
                         },
                         "4": {
-                            "conditional": "Envidia",
+                            "conditional": "BarbaraEnvidia",
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
@@ -1745,14 +1822,14 @@
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
-                                "[\n  \"Pero,¿solo una?\"\n]"
+                                "Pero,¿solo una?"
                             ]
                         },
                         "22": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "[\n  \"Meh, ¡pon cuantas quieras!\"\n]"
+                                "Meh, ¡pon cuantas quieras!"
                             ]
                         },
                         "23": {
@@ -1777,135 +1854,133 @@
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "[\n  \"¡Hala! ¡Hala, hala, hala! ¡Es precioso!\"\n]",
-                                "[\n  \"¡Es lo más bonito que he visto jamás!\"\n]",
-                                "[\n  \"¡Y además dos rosas!\"\n]"
+                                "¡Hala! ¡Hala, hala, hala! ¡Es precioso!",
+                                "¡Es lo más bonito que he visto jamás!",
+                                "¡Y además dos rosas!"
                             ]
                         },
                         "25": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
-                                "[\n  \"Sí, os representan a vosotras. \"\n]"
+                                "Sí, os representan a vosotras."
                             ]
                         },
                         "26": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "[\n  \"¡Qué bien, qué bien! Es chulísimo.\"\n]",
-                                "[\n  \"Se lo voy a entregar ya de ya. Voy a ir a su casa y se lo voy a dar.\"\n]"
+                                "¡Qué bien, qué bien! Es chulísimo.",
+                                "Se lo voy a entregar ya de ya. Voy a ir a su casa y se lo voy a dar."
                             ]
                         },
                         "27": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
-                                "[\n  \"Muchísima suerte, entonces.\"\n]"
+                                "Muchísima suerte, entonces."
                             ]
                         },
                         "28": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "[\n  \"¡No me hará falta! ¡Entre el ramo y los ánimos que me has dado, voy que chuto!\"\n]",
-                                "[\n  \"¡Eres un pedazo de amiga!\"\n]",
-                                "[\n  \"¡Oh, y por cierto!\"\n]",
-                                "[\n  \"Toma, quédate con esto!\"\n]",
-                                "[\n  \"¿Puedo cogerte una tarjetita de felicitación?\"\n]"
+                                "¡No me hará falta! ¡Entre el ramo y los ánimos que me has dado, voy que chuto!",
+                                "¡Eres un pedazo de amiga!",
+                                "¡Oh, y por cierto!",
+                                "Toma, quédate con esto!",
+                                "¿Puedo cogerte una tarjetita de felicitación?"
                             ]
                         },
                         "29": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
-                                "[\n  \"Ehm... Sí, cada una cuesta dos...\"\n]"
+                                "Ehm... Sí, cada una cuesta dos..."
                             ]
                         },
                         "30": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "[\n  \"No, no, si es para que te la quedes tú.\"\n]",
-                                "[\n  \"¡Hale, toma!\"\n]"
+                                "No, no, si es para que te la quedes tú.",
+                                "¡Hale, toma!"
                             ]
                         },
                         "31": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
-                                "[\n  \"¿Me has firmado en la tarjeta?\"\n]"
+                                "¿Me has firmado en la tarjeta?"
                             ]
                         },
                         "32": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "[\n  \"¡Es un autógrafo! Para cuando me haga famosa.\"\n]",
-                                "[\n  \"¡Hasta luegoooo! ¡Voy a venir más para verte a ti y a tus flores! Pero olvídate de que pague nada más.\"\n]"
+                                "¡Es un autógrafo! Para cuando me haga famosa.",
+                                "¡Hasta luegoooo! ¡Voy a venir más para verte a ti y a tus flores! Pero olvídate de que pague nada más."
                             ]
                         },
                         "33": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
-                                "[\n  \"Vaya chica más... Curiosa.\"\n]",
-                                "[\n  \"Pero parece que es... Una buena amiga.\"\n]",
-                                "[\n  \"Quizás sí se equivocaba y podré echar raíces aquí...\"\n]"
+                                "Vaya chica más... Curiosa.",
+                                "Pero parece que es... Una buena amiga.",
+                                "Quizás sí se equivocaba y podré echar raíces aquí..."
                             ]
                         },
                         "34": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "[\n  \"¡Anda!## Es un...# ramo curioso.\"\n]"
+                                "¡Anda!## Es un...# ramo curioso."
                             ]
                         },
                         "35": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
-                                "[\n  \"¿Te gusta?\"\n]"
+                                "¿Te gusta?"
                             ]
                         },
                         "36": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "[\n  \"Sí, pero... Creo que me he dado cuenta de que al final lo que importa es lo mucho que la quiero.\"\n]",
-                                "[\n  \"Y ningún ramo será capaz de decirlo.\"\n]",
-                                "[\n  \"Sólo yo.\"\n]"
+                                "Sí, pero... Creo que me he dado cuenta de que al final lo que importa es lo mucho que la quiero.",
+                                "Y ningún ramo será capaz de decirlo.",
+                                "Sólo yo."
                             ]
                         },
                         "37": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
-                                "[\n  \"Sí... Supongo que tienes razón.\"\n]"
+                                "Sí... Supongo que tienes razón."
                             ]
                         },
                         "38": {
                             "tipo": "dialogo",
                             "hablante": "cliente",
                             "lineas": [
-                                "[\n  \"Pues eso\"\n]",
-                                "[\n  \"¿Sabes qué? Puedes quedarte el ramo. ¡Voy a decirle ya lo que siento!\"\n]"
+                                "Pues eso",
+                                "¿Sabes qué? Puedes quedarte el ramo. ¡Voy a decirle ya lo que siento!"
                             ]
                         },
                         "39": {
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
-                                "[\n  \"Oh-- ¡Oye, espera, Barbara...!\"\n]",
-                                "[\n  \"Ay, no...\"\n]"
+                                "Oh-- ¡Oye, espera, Barbara...!",
+                                "Ay, no..."
                             ]
                         }
                     }
                 },
                 "1": {
                     "nombre": "Flora",
-                    "sprite": "",
-                    "altSprite": "",
                     "tone": "res://Media/mujer_hablando.ogg",
                     "dialogo": {
                         "0": {

@@ -1,10 +1,54 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/MenuPrincipal.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/GameJamMenu.png" type="Texture" id=2]
-[ext_resource path="res://Media/musica_lofi.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/menu_img.png" type="Texture" id=2]
+[ext_resource path="res://Media/MusicaMenuInicio.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Themes/Dialogo.tres" type="Theme" id=4]
 [ext_resource path="res://Scenes/MenuPausa.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Themes/Label.tres" type="Theme" id=6]
+[ext_resource path="res://Sprites/global_jam.png" type="Texture" id=7]
+[ext_resource path="res://Themes/boton_vacio.tres" type="Theme" id=8]
+[ext_resource path="res://Sprites/bts_logo-01.png" type="Texture" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "EnterMenu"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 0.210224, 1 ),
+"update": 0,
+"values": [ Vector2( 1800, 270 ), Vector2( 1800, 270 ), Vector2( 1206, 270 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2, 2 ),
+"transitions": PoolRealArray( 1, 0.241484, 1 ),
+"update": 0,
+"values": [ Vector2( 728, 822 ), Vector2( 728, 822 ), Vector2( 727, 646 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:rotation_degrees")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 0.435275, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
 
 [node name="MenuPrincipal" type="Control"]
 anchor_right = 1.0
@@ -17,50 +61,51 @@ anchor_bottom = 1.0
 color = Color( 0.529412, 0.945098, 0.952941, 0.556863 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 140.0
-margin_top = -290.0
-margin_right = 340.0
-margin_bottom = 10.0
-rect_scale = Vector2( 2, 2 )
-mouse_filter = 2
-texture = ExtResource( 2 )
-
-[node name="Opciones" type="Button" parent="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 35.0
-margin_top = 132.0
-margin_right = -21.0
-margin_bottom = -124.0
-rect_min_size = Vector2( 119, 0 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-flat = true
+margin_right = 960.0
+margin_bottom = 630.0
+rect_scale = Vector2( 0.610134, 0.610134 )
+mouse_filter = 2
+texture = ExtResource( 2 )
 
 [node name="Comenzar Paritida" type="Button" parent="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 37.0
-margin_top = 55.0
-margin_right = -22.0
-margin_bottom = -206.0
+margin_left = 951.0
+margin_top = 295.0
+margin_right = -940.0
+margin_bottom = -898.0
 rect_min_size = Vector2( 118, 0 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme = ExtResource( 8 )
 flat = true
 icon_align = 1
+
+[node name="Opciones" type="Button" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 946.0
+margin_top = 549.0
+margin_right = -953.0
+margin_bottom = -637.0
+rect_min_size = Vector2( 119, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 8 )
+flat = true
 
 [node name="Salir" type="Button" parent="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 24.0
-margin_top = 214.5
-margin_right = -57.0
-margin_bottom = -44.5
+margin_left = 1033.0
+margin_top = 808.0
+margin_right = -1031.0
+margin_bottom = -385.0
 rect_min_size = Vector2( 119, 0 )
 size_flags_horizontal = 0
+theme = ExtResource( 8 )
 flat = true
 
 [node name="Version" type="Label" parent="."]
@@ -71,7 +116,7 @@ anchor_bottom = 1.0
 margin_left = -111.0
 margin_top = -37.0
 theme = ExtResource( 4 )
-text = "v0.0.3.0"
+text = "v0.4.0.0"
 align = 1
 valign = 1
 
@@ -84,7 +129,108 @@ bus = "BG"
 [node name="MenuPausa" parent="." instance=ExtResource( 5 )]
 visible = false
 
+[node name="MenuAnimator" type="AnimationPlayer" parent="."]
+anims/EnterMenu = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 360.0
+margin_top = -90.0
+margin_right = 510.0
+margin_bottom = 242.0
+
+[node name="Narrativa" type="Label" parent="VBoxContainer"]
+margin_right = 150.0
+margin_bottom = 37.0
+theme = ExtResource( 4 )
+text = "Narrativa"
+align = 1
+valign = 1
+
+[node name="Nombres" type="Label" parent="VBoxContainer"]
+margin_top = 41.0
+margin_right = 150.0
+margin_bottom = 94.0
+theme = ExtResource( 6 )
+text = "Diana Marí
+Carles Perez"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Programa" type="Label" parent="VBoxContainer"]
+margin_top = 98.0
+margin_right = 150.0
+margin_bottom = 135.0
+theme = ExtResource( 4 )
+text = "Programación"
+align = 1
+valign = 1
+
+[node name="Nombres2" type="Label" parent="VBoxContainer"]
+margin_top = 139.0
+margin_right = 150.0
+margin_bottom = 192.0
+theme = ExtResource( 6 )
+text = "Luis Lasbelin
+Roberto Arevalillo"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Diseños" type="Label" parent="VBoxContainer"]
+margin_top = 196.0
+margin_right = 150.0
+margin_bottom = 233.0
+theme = ExtResource( 4 )
+text = "Arte"
+align = 1
+valign = 1
+
+[node name="Nombres3" type="Label" parent="VBoxContainer"]
+margin_top = 237.0
+margin_right = 150.0
+margin_bottom = 262.0
+theme = ExtResource( 6 )
+text = "PirateInvicta"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Diseños2" type="Label" parent="VBoxContainer"]
+margin_top = 266.0
+margin_right = 150.0
+margin_bottom = 303.0
+theme = ExtResource( 4 )
+text = "Render"
+align = 1
+valign = 1
+
+[node name="Nombres4" type="Label" parent="VBoxContainer"]
+margin_top = 307.0
+margin_right = 150.0
+margin_bottom = 332.0
+theme = ExtResource( 6 )
+text = "Adrián K"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 728, 822 )
+rotation = 6.28319
+scale = Vector2( 0.113222, 0.113222 )
+texture = ExtResource( 7 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 1373, 52 )
+scale = Vector2( 0.0989925, 0.0989925 )
+texture = ExtResource( 9 )
+
 [connection signal="ready" from="." to="." method="_on_MenuPrincipal_ready"]
-[connection signal="pressed" from="TextureRect/Opciones" to="." method="_on_Opciones_pressed"]
 [connection signal="pressed" from="TextureRect/Comenzar Paritida" to="." method="_on_Comenzar_Paritida_pressed"]
+[connection signal="pressed" from="TextureRect/Opciones" to="." method="_on_Opciones_pressed"]
 [connection signal="pressed" from="TextureRect/Salir" to="." method="_on_Salir_pressed"]
