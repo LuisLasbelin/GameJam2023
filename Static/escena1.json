@@ -18,6 +18,14 @@
                             ]
                         },
                         "1" : {
+                            "conditional": "debug",
+                            "tipo": "dialogo",
+                            "hablante": "tu",
+                            "lineas": [
+                                "Esto es un texto para comprobaciones, no lo toques."
+                            ]
+                        },
+                        "2" : {
                             "tipo": "fin"
                         }
                     }
@@ -588,6 +596,7 @@
                             }
                         },
                         "35" : {
+                            "reward": "ColeContento",
                             "tipo": "dialogo",
                             "hablante": "tu",
                             "lineas": [
@@ -807,7 +816,7 @@
                     }
                 },
                 "1": {
-                    "conditional": "ColeSatisfecho",
+                    "conditional": "ColeContento",
                     "nombre" : "Cole",
                     "sprite" : "res://Sprites/WRATH_TEST_01.png",
                     "altSprite": "res://Sprites/WRATH_TEST_01.png",

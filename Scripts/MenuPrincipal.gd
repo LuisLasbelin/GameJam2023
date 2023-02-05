@@ -13,7 +13,7 @@ func _on_Salir_pressed():
 
 
 func _on_Opciones_pressed():
-	menuPausa.is_paused = true
+	menuPausa.set_is_paused(true)
 
 
 func _on_Comenzar_Paritida_pressed():

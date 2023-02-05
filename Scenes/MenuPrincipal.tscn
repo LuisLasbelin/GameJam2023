@@ -16,12 +16,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.529412, 0.945098, 0.952941, 0.556863 )
 
-[node name="Control" type="Control" parent="."]
-margin_left = 720.0
-margin_top = 360.0
-margin_right = 720.0
-margin_bottom = 360.0
-
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5

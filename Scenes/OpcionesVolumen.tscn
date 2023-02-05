@@ -40,6 +40,7 @@ margin_bottom = 63.0
 rect_min_size = Vector2( 10, 10 )
 min_value = -30.0
 max_value = 0.0
+value = -10.0
 rounded = true
 
 [node name="Control" type="Control" parent="ColorRectBackground/CenterContainer/VBoxContainer"]
