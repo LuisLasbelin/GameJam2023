@@ -1976,6 +1976,9 @@
                                 "Oh-- ¡Oye, espera, Barbara...!",
                                 "Ay, no..."
                             ]
+                        },
+                        "40": {
+                            "tipo": "fin"
                         }
                     }
                 },
@@ -2012,6 +2015,9 @@
                                 "De acuerdo.",
                                 "Gracias..."
                             ]
+                        },
+                        "1": {
+                            "tipo": "fin"
                         }
                     }
                 }

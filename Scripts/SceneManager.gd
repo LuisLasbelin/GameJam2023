@@ -32,7 +32,11 @@ func _ready():
 func newClient():
 	cliente += 1
 	if(cliente >= Escena1.scenedata.dias[str(dia)].clientes.size()):
+		dialogo.dialogAnimator.play("Exit")
+		clientClass.clientExit()
+		yield(get_tree().create_timer(1), "timeout")
 		nextDay()
+		return
 	var objCliente = Escena1.scenedata.dias[str(dia)].clientes[str(cliente)]
 	if(objCliente.has('conditional')):
 		if(!condicionales.has(objCliente.conditional)):
