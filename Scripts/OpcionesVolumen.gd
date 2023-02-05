@@ -1,6 +1,7 @@
 extends Control
 
 onready var parent = $"."
+onready var muestraEfecto = $MuestraEfecto
 
 func _on_Volver_pressed():
 	parent.visible = false
@@ -18,3 +19,5 @@ func _on_HSliderVolumen_value_changed(value):
 func _on_EffectsSlider_value_changed(value):
 	if value != 0:
 		AudioServer.set_bus_volume_db(2,value)
+	
+	muestraEfecto.play()

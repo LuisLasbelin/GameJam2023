@@ -1,9 +1,11 @@
 extends Control
 
+onready var menuPausa = $MenuPausa
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("menu pausa")
+	menuPausa.is_paused = false
 
 
 func _on_Salir_pressed():
@@ -11,7 +13,7 @@ func _on_Salir_pressed():
 
 
 func _on_Opciones_pressed():
-	get_tree().change_scene("res://Scenes/OpcionesVolumen.tscn")
+	menuPausa.is_paused = true
 
 
 func _on_Comenzar_Paritida_pressed():

@@ -19,7 +19,14 @@ var cliente: int = -1
 func _ready():
 	flores.visible = false
 	dialogo.visible = false
-	nextDay()
+	# first day
+	dia += 1
+	diaText.text = str(dia+1)
+	# El panel dia debe estar en posicion al principio
+	yield(get_tree().create_timer(2), "timeout")
+	cambioDiaAnimator.play("Salir")
+	cliente = -1
+	newClient()
 
 
 func newClient():

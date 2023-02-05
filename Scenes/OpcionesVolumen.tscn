@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/OpcionesVolumen.gd" type="Script" id=1]
 [ext_resource path="res://Themes/Dialogo.tres" type="Theme" id=2]
 [ext_resource path="res://Themes/Label.tres" type="Theme" id=3]
+[ext_resource path="res://Media/mujer_hablando.ogg" type="AudioStream" id=4]
 
 [node name="OpcionesVolumen" type="Control"]
 pause_mode = 2
@@ -68,6 +69,10 @@ margin_right = 189.0
 margin_bottom = 187.0
 theme = ExtResource( 3 )
 text = "Volver"
+
+[node name="MuestraEfecto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Effects"
 
 [connection signal="ready" from="." to="." method="_on_OpcionesVolumen_ready"]
 [connection signal="value_changed" from="ColorRectBackground/CenterContainer/VBoxContainer/BGSlider" to="." method="_on_HSliderVolumen_value_changed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/MenuPrincipal.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/GameJamMenu.png" type="Texture" id=2]
 [ext_resource path="res://Media/musica_lofi.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Themes/Dialogo.tres" type="Theme" id=4]
+[ext_resource path="res://Scenes/MenuPausa.tscn" type="PackedScene" id=5]
 
 [node name="MenuPrincipal" type="Control"]
 anchor_right = 1.0
@@ -81,9 +82,13 @@ align = 1
 valign = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 3 )
 autoplay = true
 bus = "BG"
+
+[node name="MenuPausa" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [connection signal="ready" from="." to="." method="_on_MenuPrincipal_ready"]
 [connection signal="pressed" from="TextureRect/Opciones" to="." method="_on_Opciones_pressed"]
