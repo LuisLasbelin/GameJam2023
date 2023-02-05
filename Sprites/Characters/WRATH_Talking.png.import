@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DENIAL_TEST_02.png-219eed5ca89aec0cd46c6871150d051d.stex"
+path="res://.import/WRATH_Talking.png-55c0bbb036555fc13ffdd7cd97f46bbf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/DENIAL_TEST_02.png"
-dest_files=[ "res://.import/DENIAL_TEST_02.png-219eed5ca89aec0cd46c6871150d051d.stex" ]
+source_file="res://Sprites/Characters/WRATH_Talking.png"
+dest_files=[ "res://.import/WRATH_Talking.png-55c0bbb036555fc13ffdd7cd97f46bbf.stex" ]
 
 [params]
 

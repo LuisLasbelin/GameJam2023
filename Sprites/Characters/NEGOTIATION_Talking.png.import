@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DENIAL_TEST_02.png-219eed5ca89aec0cd46c6871150d051d.stex"
+path="res://.import/NEGOTIATION_Talking.png-78449a8aaad28d1997a301b5608c5b82.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/DENIAL_TEST_02.png"
-dest_files=[ "res://.import/DENIAL_TEST_02.png-219eed5ca89aec0cd46c6871150d051d.stex" ]
+source_file="res://Sprites/Characters/NEGOTIATION_Talking.png"
+dest_files=[ "res://.import/NEGOTIATION_Talking.png-78449a8aaad28d1997a301b5608c5b82.stex" ]
 
 [params]
 

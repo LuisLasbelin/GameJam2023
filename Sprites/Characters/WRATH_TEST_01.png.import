@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WRATH_TEST_01.png-1f6a5de2206946dbf515c4ffa942b79a.stex"
+path="res://.import/WRATH_TEST_01.png-84559df0e8c0c5310dfcc8e269f51cdd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/WRATH_TEST_01.png"
-dest_files=[ "res://.import/WRATH_TEST_01.png-1f6a5de2206946dbf515c4ffa942b79a.stex" ]
+source_file="res://Sprites/Characters/WRATH_TEST_01.png"
+dest_files=[ "res://.import/WRATH_TEST_01.png-84559df0e8c0c5310dfcc8e269f51cdd.stex" ]
 
 [params]
 
